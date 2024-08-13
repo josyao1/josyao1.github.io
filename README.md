@@ -5,6 +5,7 @@ Here's an updated README with a brief explanation of how you set up the site on 
 # Personal Portfolio Website
 
 Visit the live site at: [https://josyao1.github.io](https://josyao1.github.io)
+Video demonstration link: [https://drive.google.com/file/d/1I7ZD3S1--_iGG5_dLT3yLPVfs7er0OWV/view?usp=sharing](https://drive.google.com/file/d/1I7ZD3S1--_iGG5_dLT3yLPVfs7er0OWV/view?usp=sharing)
 
 ## Overview
 
