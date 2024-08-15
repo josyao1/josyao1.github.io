@@ -72,3 +72,38 @@ section.blog-post strong {
 .styled-back-button:hover {
     background-color: #5e337a;
 }
+
+pre code {
+    display: block;
+    padding: 10px;
+    margin: 0 0 1em;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #282c34; /* Dark background */
+    color: #abb2bf; /* Light text color */
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* Syntax highlighting */
+code .keyword {
+    color: #c678dd; /* Purple */
+}
+code .function {
+    color: #61afef; /* Blue */
+}
+code .string {
+    color: #98c379; /* Green */
+}
+code .comment {
+    color: #5c6370; /* Gray */
+    font-style: italic;
+}
+code .number {
+    color: #d19a66; /* Orange */
+}
+code .operator {
+    color: #56b6c2; /* Cyan */
+}

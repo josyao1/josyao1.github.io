@@ -41,20 +41,36 @@ Neural networks have revolutionized the way we approach problems that involve pa
         <br>
         <section>
             <h2>1. Dense (Fully Connected) Layer</h2>
+        
             <h3>Analogy: The Decision-Making Committee</h3>
             <p>Imagine a committee where each member represents a neuron in a dense layer. Every committee member looks at all the information available (all the inputs) and makes a decision (output). The final decision (output of the dense layer) is a combination of all these individual decisions, weighted by the importance of each member's opinion.</p>
-            
+        
             <h3>Math Behind It:</h3>
-            <p>
-                Equation: \( z_j = \sum_{i=1}^{n} w_{ij}x_i + b_j \)
-            </p>            
-            <p>Here, \( x_i \) are the input features, \( w_{ij} \) are the weights, \( b_j \) is the bias term, and \( z_j \) is the output before activation.</p>
-            <p>
-                Activation: Once \( z_j \) is calculated, an activation function (e.g., ReLU, Sigmoid) is applied: \( a_j = \sigma(z_j) \)
-            </p>    
+            <p><strong>Equation:</strong> \( z_j = \sum_{i=1}^{n} w_{ij}x_i + b_j \)</p>
+            <p>Here:</p>
+            <ul>
+                <li><strong>\( x_i \)</strong> are the input features.</li>
+                <li><strong>\( w_{ij} \)</strong> are the weights.</li>
+                <li><strong>\( b_j \)</strong> is the bias term.</li>
+                <li><strong>\( z_j \)</strong> is the output before activation.</li>
+            </ul>
+            <p><strong>Activation:</strong> Once \( z_j \) is calculated, an activation function (e.g., ReLU, Sigmoid) is applied: \( a_j = \sigma(z_j) \)</p>
+        
+            <pre><code>
+        <span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
+        <span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> Dense
+        
+        # Example of a <span class="function">Dense</span> layer in TensorFlow
+        model = tf.keras.Sequential([
+            Dense(128, <span class="function">activation</span>=<span class="string">'relu'</span>, input_shape=(784,)),  <span class="comment"># 128 neurons, ReLU activation</span>
+            Dense(10, <span class="function">activation</span>=<span class="string">'softmax'</span>)  <span class="comment"># Output layer with 10 classes</span>
+        ])
+        </code></pre>
+        
             <h3>When to Use:</h3>
             <p>Dense layers are used when every input feature should be connected to every neuron in the next layer, making them crucial for tasks that require full integration of learned features.</p>
         </section>
+        
         <section>
             <h2>2. Convolutional Layer (Conv2D)</h2>
         
@@ -236,7 +252,67 @@ Neural networks have revolutionized the way we approach problems that involve pa
             <p>In hidden layers, especially in deep networks where capturing complex patterns is necessary.</p>
         </section>
 <br>        
-        
+<section>
+    <h2>Real Life Application: Building a Number Recognition Model</h2>
+
+    <p>This summer, I dove deep into the intricacies of neural networks, aiming to build and optimize models that can solve real-world problems. One of the most exciting projects I worked on was developing a number recognition model using a Convolutional Neural Network (CNN). This type of neural network is particularly well-suited for image recognition tasks, such as identifying handwritten digits. Below is an example of the code I used to create this model, showcasing the application of various layers and concepts I learned along the way.</p>
+
+    <pre><code>
+<span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers, models
+
+<span class="comment"># Create the model</span>
+model = models.Sequential([
+    layers.Conv2D(64, (3, 3), activation=<span class="string">'relu'</span>, input_shape=(28, 28, 1)),
+    layers.Conv2D(32, 3, padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>),
+    layers.MaxPooling2D(),
+    layers.Conv2D(16, 3, padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 3, padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>),
+    layers.MaxPooling2D(),
+    layers.Flatten(),
+    layers.Dense(128, activation=<span class="string">'relu'</span>),
+    layers.Dense(10, activation=<span class="string">'sigmoid'</span>)
+])
+</code></pre>
+
+    <h3>Layer by Layer Breakdown</h3>
+    <p><strong>Conv2D (64 filters, 3x3, ReLU activation):</strong> The first convolutional layer applies 64 filters to the input image, each of size 3x3, to detect features like edges and textures. The ReLU activation function introduces non-linearity, allowing the model to learn more complex patterns.</p>
+
+    <p><strong>Conv2D (32 filters, 3x3, ReLU activation, padding='same'):</strong> The second convolutional layer with 32 filters further processes the features, with padding ensuring that the output size remains the same as the input size. This allows for more granular feature detection without reducing spatial dimensions.</p>
+
+    <p><strong>MaxPooling2D:</strong> The first max-pooling layer reduces the spatial dimensions of the feature maps, making the model more computationally efficient while retaining the most important information.</p>
+
+    <p><strong>Conv2D (16 filters, 3x3, ReLU activation, padding='same'):</strong> This layer continues feature extraction with 16 filters, further refining the features while maintaining the spatial dimensions with padding.</p>
+
+    <p><strong>MaxPooling2D:</strong> Another max-pooling layer reduces the spatial size again, helping to summarize the features learned so far and reduce computational load.</p>
+
+    <p><strong>Conv2D (64 filters, 3x3, ReLU activation):</strong> This layer reintroduces 64 filters to the reduced feature map, focusing on more complex patterns that might have been formed by earlier layers.</p>
+
+    <p><strong>MaxPooling2D:</strong> The final max-pooling layer ensures that the feature map is small and manageable while retaining essential features for final decision-making.</p>
+
+    <p><strong>Flatten:</strong> The flatten layer converts the 2D feature maps into a 1D vector, which can be fed into dense layers for final classification.</p>
+
+    <p><strong>Dense (128 neurons, ReLU activation):</strong> This dense layer fully connects to the flattened input, combining all learned features into a single decision-making process. The ReLU activation continues to introduce non-linearity.</p>
+
+    <p><strong>Dense (10 neurons, Sigmoid activation):</strong> The final dense layer with 10 neurons corresponds to the 10 possible digit classes (0-9), with sigmoid activation providing probabilities for each class.</p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>This project was a hands-on opportunity to apply the theoretical knowledge I've acquired about neural networks. By carefully selecting and configuring each layer, I was able to create a model capable of recognizing handwritten digits with impressive accuracy. This experience not only reinforced my understanding of CNNs but also taught me the importance of experimentation and fine-tuning in building effective machine learning models. I hope the insights shared here help you in your own journey of understanding and applying neural networks!</p>
+</section>
+        <section id="sources">
+            <h2>Sources</h2>
+            <ul>
+                <li><a href="https://medium.com/@curiositydeck/popular-neural-networks-layers-43e02bce6bce" target="_blank">Understanding Neural Networks Layers - Curiosity Deck on Medium</a></li>
+                <li><a href="https://medium.com/@sarita_68521/basic-understanding-of-neural-network-structure-eecc8f149a23#:~:text=A%20neural%20network%20is%20composed,features%20of%20the%20input%20data." target="_blank">Basic Understanding of Neural Network Structure - Sarita on Medium</a></li>
+                <li><a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">Neural Networks Explained - 3Blue1Brown on YouTube</a></li>
+            </ul>
+            <p>Special thanks to the 3Blue1Brown series for its clear and engaging explanations of neural network concepts.</p>
+        </section>
+        <br>
+
+
         
 
         
