@@ -30,30 +30,102 @@
 
         <!-- Linear Regression Section -->
         <section>
-            <h2>1. Linear Regression</h2>
-            <h3>Math Behind It:</h3>
-            <p><strong>Equation:</strong> \( y = \beta_0 + \beta_1x + \epsilon \)</p>
-            <p>Here:</p>
+            <h2>Linear Regression</h2>
+            <p><strong>Concept:</strong></p>
+            <p>Linear regression is a fundamental statistical method used to model the relationship between a dependent variable and one or more independent variables. The goal is to find the best-fitting straight line through the data points that predicts the dependent variable (Y) based on the independent variable(s) (X). This line is known as the regression line and is represented by the equation:</p>
+        
+            <p><strong>Mathematical Representation:</strong></p>
+            <p>The equation of a linear regression line is:</p>
+            <p><code>Y = β₀ + β₁X + ε</code></p>
+            <p>Where:</p>
             <ul>
-                <li>\( y \) is the dependent variable (target).</li>
-                <li>\( x \) is the independent variable (predictor).</li>
-                <li>\( \beta_0 \) is the intercept.</li>
-                <li>\( \beta_1 \) is the slope coefficient.</li>
-                <li>\( \epsilon \) is the error term.</li>
+                <li><strong>Y</strong> is the dependent variable (what you're trying to predict).</li>
+                <li><strong>X</strong> is the independent variable (the input).</li>
+                <li><strong>β₀</strong> is the intercept of the regression line.</li>
+                <li><strong>β₁</strong> is the slope of the regression line (how much Y changes for a unit change in X).</li>
+                <li><strong>ε</strong> is the error term (the difference between the actual and predicted values).</li>
             </ul>
-            <p><strong>Uses:</strong> Linear regression is widely used in predictive analysis and is the foundation of many complex models.</p>
-            <p><strong>Pros:</strong> Simple to implement, interpretable, and works well when the relationship between variables is linear.</p>
-            <p><strong>Cons:</strong> Performs poorly when relationships are non-linear and is sensitive to outliers.</p>
-            <!-- Placeholder for an image -->
-            <img src="path-to-image/linear-regression.png" alt="Linear Regression Visual" class="regression-image">
+        
+            <p><strong>Minimizing Errors:</strong></p>
+            <p>The core objective of linear regression is to minimize the sum of squared errors (SSE) between the predicted values and the actual values. This is achieved through a process known as least squares estimation. The formula to minimize is:</p>
+            <p><code>SSE = Σ(Yᵢ - Ŷᵢ)²</code></p>
+            <p>Where:</p>
+            <ul>
+                <li><strong>Yᵢ</strong> is the actual value.</li>
+                <li><strong>Ŷᵢ</strong> is the predicted value.</li>
+            </ul>
+            <p>By adjusting the parameters β₀ and β₁, the model finds the line that minimizes the SSE, thereby providing the best fit for the data.</p>
+        
+            <!-- Image for Linear Regression (centered) -->
+            <div style="text-align: center;">
+                <img src="../img/linearregression.webp" alt="Linear Regression Visualization" style="max-width: 100%; height: auto;">
+            </div>
+            <!-- The image above should be a graph demonstrating a linear regression line fitting a set of data points -->
+        
+            <p><strong>Advantages:</strong></p>
+            <ul>
+                <li>Simple and easy to interpret.</li>
+                <li>Works well when the relationship between variables is approximately linear.</li>
+            </ul>
+        
+            <p><strong>Limitations:</strong></p>
+            <ul>
+                <li>Assumes a linear relationship between variables, which may not always be the case.</li>
+                <li>Sensitive to outliers, which can skew the results.</li>
+            </ul>
         </section>
+        
+        
         <br>
 
         <!-- Polynomial Regression Section -->
         <section>
             <h2>2. Polynomial Regression</h2>
-            <!-- Add math, uses, pros, cons, and an image similar to the Linear Regression Section -->
+        
+            <p><strong>Concept:</strong></p>
+            <p>Polynomial regression is an extension of linear regression where the relationship between the independent variable (X) and the dependent variable (Y) is modeled as an nth-degree polynomial. Instead of fitting a straight line, polynomial regression fits a curve that best describes the data.</p>
+        
+            <p><strong>Mathematical Representation:</strong></p>
+            <p>The equation for a polynomial regression model of degree n is:</p>
+            <p><code>Y = β₀ + β₁X + β₂X² + ... + βₙXⁿ + ε</code></p>
+            <p>Where:</p>
+            <ul>
+                <li><strong>Y</strong> is the dependent variable.</li>
+                <li><strong>X</strong> is the independent variable.</li>
+                <li><strong>β₀</strong> is the intercept.</li>
+                <li><strong>β₁, β₂, ... , βₙ</strong> are the coefficients of the polynomial terms.</li>
+                <li><strong>ε</strong> is the error term.</li>
+            </ul>
+        
+            <p><strong>Minimizing Errors:</strong></p>
+            <p>Like linear regression, the goal of polynomial regression is to minimize the sum of squared errors (SSE) between the predicted and actual values. The model adjusts the coefficients (β₀, β₁, β₂, ..., βₙ) to find the polynomial curve that best fits the data.</p>
+        
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>When the relationship between the independent and dependent variables is non-linear but can be approximated by a polynomial function.</li>
+                <li>Useful in modeling more complex relationships, such as growth rates, market trends, and various natural phenomena.</li>
+            </ul>
+        
+            <!-- Image for Polynomial Regression (centered) -->
+            <div style="text-align: center;">
+                <img src="../img/poly.png" alt="Polynomial Regression Visualization" style="max-width: 100%; height: auto;">
+            </div>
+            <!-- The image above should be a graph showing polynomial regression fitting a curved line through a set of data points -->
+        
+            <p><strong>Advantages:</strong></p>
+            <ul>
+                <li>More flexible than linear regression; can model a wider range of relationships.</li>
+                <li>Can provide a better fit for data with non-linear relationships.</li>
+            </ul>
+        
+            <p><strong>Limitations:</strong></p>
+            <ul>
+                <li>Prone to overfitting, especially with higher-degree polynomials.</li>
+                <li>Can become computationally expensive as the degree of the polynomial increases.</li>
+                <li>Interpretability decreases as the model becomes more complex.</li>
+            </ul>
         </section>
+        
         <br>
 
         <!-- Bayesian Regression Section -->
