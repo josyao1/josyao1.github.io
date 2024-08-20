@@ -158,16 +158,16 @@ a:active {
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Adjusted spacing between tags */
+  gap: 15px; 
 }
 
 .tag {
-  background-color: #e9ecef; /* Light gray background to match the color scheme */
+  background-color: #e9ecef; 
   border-radius: 3px;
   padding: 5px 10px;
   font-size: 1em;
-  color: #343a40; /* Dark gray text color to match the color scheme */
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Match font type */
+  color: #343a40; 
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 #dark-mode-toggle-container {
   position: fixed;
@@ -201,14 +201,14 @@ body.dark-mode .bg-primary {
 }
 
 body.dark-mode .text-primary {
-  color: #bb86fc !important; /* Lighter color for text-primary in dark mode */
+  color: #bb86fc !important;
 }
 
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
-  color: #ffffff !important; /* Lighter color for titles in dark mode */
+  color: #ffffff !important;
 }
 
 body.dark-mode .resume-date {
-  color: #bb86fc !important; /* Lighter color for dates in dark mode */
+  color: #bb86fc !important; 
 }
 
