@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From College Project to Startup: Building SomethingSold</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>From College Project to Startup: Building SomethingSold</h1>
+        <p class="subtitle">8/15/2026</p>
+        <section style="margin: 20px 0;">
+            <button onclick="goBack()" class="styled-back-button">← Back</button>
+        </section>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Turning a simple college project into a fully functioning startup is an experience like no other. When my team and I embarked on creating <strong>SomethingSold</strong>, a college-specific platform for buying and selling second-hand furniture, we had no idea how much we would learn along the way. This blog covers our journey from the initial ideation phase to launching the platform, and everything in between. If you’re interested in building your own startup, or just curious about the process, I hope this story provides some insights.</p>
+        </section>
+
+        <section>
+            <h2>1. Ideation: Solving a Real Problem</h2>
+            <p>Every successful project begins with solving a real problem. For <strong>SomethingSold</strong>, the problem was simple: college students often struggle with buying and selling second-hand furniture at the start and end of the academic year. Traditional marketplaces like Craigslist or Facebook Marketplace have their advantages, but they are not tailored to the needs of students who need quick, reliable, and local transactions.</p>
+            <p>We identified a gap: students needed a safe, easy-to-use platform specifically designed for buying and selling within their college community. This insight became the foundation for <strong>SomethingSold</strong>. Our goal was to build a trustworthy platform that streamlined transactions, offered a user-friendly interface, and provided robust features like user authentication, secure payments, and easy-to-navigate product listings.</p>
+        </section>
+
+        <section>
+            <h2>2. Learning AWS and Backend Development: Building the Technical Foundation</h2>
+            <p>One of the first challenges was figuring out the technical infrastructure. Our team decided on a cloud-based approach, and we chose Amazon Web Services (AWS) for its scalability and security. Learning to use AWS was a steep learning curve, but it was essential for building a robust backend.</p>
+            <h3>Key AWS Services We Used:</h3>
+            <ul>
+                <li><strong>AWS Cognito:</strong> We used Cognito for user authentication, ensuring that users could sign up, log in, and verify their accounts securely. Learning how to implement OAuth standards, manage tokens, and integrate with other AWS services was crucial.</li>
+                <li><strong>AWS Lambda:</strong> Lambda allowed us to run backend code without managing servers, which was ideal for our small team. We wrote functions for handling CRUD operations, image processing, and managing user data.</li>
+                <li><strong>Amazon S3:</strong> Storing images of furniture listings required a scalable and cost-effective solution. Amazon S3 was perfect for this, and we learned how to configure buckets, manage file uploads, and serve content efficiently.</li>
+                <li><strong>RDS (Relational Database Service):</strong> For our database, we chose RDS because it allowed us to use PostgreSQL, a reliable and well-documented relational database. Setting up database instances, creating tables, and managing connections became a crucial part of our backend setup.</li>
+            </ul>
+            <h3>Learning Curve:</h3>
+            <p>Coming from a background where I was more familiar with traditional web development, diving into AWS was initially overwhelming. We had to learn about IAM (Identity and Access Management), setting up environments, and understanding cloud security best practices. The hands-on experience taught me how to design scalable backend systems, something that I had only seen theoretically in classes.</p>
+        </section>
+
+        <section>
+            <h2>3. Exploring Backend Tools: APIs, Automation, and Integration</h2>
+            <p>Building a platform like <strong>SomethingSold</strong> required more than just understanding AWS. I had to get comfortable with various backend tools and frameworks to create an efficient and scalable system.</p>
+            <h3>What I Learned:</h3>
+            <ul>
+                <li><strong>APIs (Application Programming Interfaces):</strong> We needed our platform to communicate smoothly between the frontend and backend. Designing RESTful APIs that were efficient and secure became a big part of the project. I learned how to build endpoints for CRUD operations, manage authentication, and handle requests efficiently.</li>
+                <li><strong>Automation Scripts:</strong> One of the things that saved us time was creating backend automation scripts for tasks like data backups, cleaning up old listings, and sending out periodic notifications. Python was my go-to language for these scripts, and I used libraries like <code>boto3</code> to interact with AWS services directly.</li>
+                <li><strong>Integration:</strong> Our platform had to integrate various services, from payment processors to messaging systems. I learned how to use Stripe for payment processing, ensuring transactions were smooth and secure. The integration process involved understanding webhooks, managing transactions, and dealing with errors and refunds.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Building and Leading a Team: Collaborating for Success</h2>
+            <p><strong>SomethingSold</strong> was not a solo project; it was a team effort. As the back-end development team lead, my role extended beyond writing code. I had to guide the team, ensure everyone was on the same page, and make sure that our work aligned with our goals and deadlines.</p>
+            <h3>Key Aspects of Leading a Team:</h3>
+            <ul>
+                <li><strong>Clear Communication:</strong> Regular meetings to discuss progress, challenges, and next steps were crucial. We used project management tools like Trello and Slack to stay organized. I learned the importance of clear and concise communication, especially when explaining technical issues to non-technical team members.</li>
+                <li><strong>Assigning Roles:</strong> Delegating tasks was essential to keep the project moving. I worked closely with the frontend team to understand their requirements and ensured our backend solutions would integrate seamlessly.</li>
+                <li><strong>Problem-Solving:</strong> Issues would inevitably arise, whether it was a bug in the code or a misconfigured AWS service. Leading the team meant stepping up to troubleshoot problems, finding solutions quickly, and sometimes making tough calls about which features to prioritize.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Managing Timelines: Balancing Development and Deadlines</h2>
+            <p>A startup thrives on momentum, and keeping the project on track was a constant challenge. Our team had to juggle multiple aspects of development, from building core features to testing, debugging, and preparing for deployment.</p>
+            <h3>Timeline Management Tips:</h3>
+            <ul>
+                <li><strong>Setting Milestones:</strong> Breaking the project down into manageable chunks helped us stay focused. We set milestones for each phase, such as completing user authentication, setting up the database, and integrating payment systems.</li>
+                <li><strong>Agile Development:</strong> We adopted an agile approach, focusing on delivering smaller, incremental updates rather than waiting for a big launch. This allowed us to gather feedback and make adjustments quickly.</li>
+                <li><strong>Testing and Deployment:</strong> Before deploying any new feature, we ran multiple tests to ensure everything was functioning correctly. Automating these tests saved us time and reduced the risk of introducing bugs into the live environment.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusion: From Idea to Reality</h2>
+            <p>Building <strong>SomethingSold</strong> has been one of the most rewarding experiences of my career so far. What started as a college project evolved into a full-fledged platform, and along the way, I gained invaluable skills in backend development, cloud computing, team management, and project coordination. This project was a crash course in what it takes to build a startup, and I learned not just technical skills but also the soft skills necessary to lead and collaborate effectively.</p>
+            <p>For anyone looking to take a similar path, my advice is simple: don’t be afraid to learn new things, even if they seem daunting at first. Take the time to understand the problems you’re trying to solve, communicate with your team, and always keep an eye on the bigger picture. What you learn in the process will be invaluable, no matter where your career takes you next.</p>
+            <p>Hope you found this journey insightful. If you’re interested in learning more about <strong>SomethingSold</strong> or want to check out our platform, feel free to reach out or visit our website!</p>
+        </section>
+    </main>
+
+    <script src="../js/backbutton.js"></script>
+</body>
+
+</html>
