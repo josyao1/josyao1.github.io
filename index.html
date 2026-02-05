@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Joshua Yao — CS student at Northwestern. Software engineer, ML enthusiast, and builder of cool things.">
+    <meta name="author" content="Joshua Yao">
 
     <title>Joshua Yao</title>
 
@@ -23,7 +23,7 @@
   <body id="page-top">
 
     <!-- Nav bar with links to different sections of the page -->
-    <<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Joshua Yao</span>
         <span class="d-none d-lg-block">
@@ -41,6 +41,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#education">Education</a>
@@ -69,7 +72,7 @@
           <div class="subheading mb-5">San Mateo, CA 94402 · (650) 504-7198 ·
             <a href="mailto:joshuayao04@gmail.com">joshuayao04@gmail.com</a>
           </div>
-          <p class="mb-5">I'm passionate about AI, particularly its applications in healthcare, and enjoy building intuitive web applications. With skills in machine learning, data analysis, and a collaborative mindset, I'm excited to tackle real-world challenges and create impactful solutions. Welcome to my portfolio!
+          <p class="about-greeting mb-5">Hey! I'm Josh — a CS student at <span class="highlight">Northwestern</span> with a minor in economics. I build things, whether that's shipping features on a <span class="highlight">classroom product at IXL</span>, creating real-time multiplayer trivia games, or training ML models to predict fantasy football outcomes. When I'm not coding, I'm probably arguing about 49ers play-calling, nerding out over F1 race strategy, or experimenting with a new recipe in the kitchen.
           </p>
           <!-- Social media icons linking to your profiles -->
 
@@ -162,61 +165,46 @@
       <div class="my-auto">
           <h2 class="mb-5">Projects</h2>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">                                                                 
-      <div class="resume-content mr-auto">                                                                                      
-          <h3 class="mb-0">Ball Knowledge</h3>                                                                                  
-          <div class="subheading mb-3">Sports Roster Trivia Web App</div>                                                       
-          <p>                                                                                                                   
-              I built a full-stack sports trivia game where players race against the clock to name NBA and NFL roster members   
-  from any team and season. Features include real-time multiplayer lobbies with live scoring via Supabase Realtime, autocomplete
-   player suggestions, and coverage of NBA rosters from 1985–2024 and NFL rosters from 2000–2024. The frontend is built with    
-  React, TypeScript, and Tailwind CSS, while two Python FastAPI microservices fetch and cache roster data from the NBA Stats API
-   and nfl_data_py. Deployed on Vercel and Render. <a href="https://ball-knowledge-delta.vercel.app/" target="_blank">Play      
-  Now</a>/<a href="https://github.com/josyao1/BallKnowledge" target="_blank">View on GitHub</a>                                 
-          </p>                                                                                                                  
-      </div>                                                                                                                    
-      <div class="resume-date text-md-right">                                                                                   
-          <span class="text-primary">Jan 2026</span>                                                                            
-      </div>                                                                                                                    
-  </div>     
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                  <h3 class="mb-0">Back-end Development Team Lead</h3>
-                  <div class="subheading mb-3">SomethingSold, College Furniture Marketplace Startup</div>
-                  <p>
-                      As a co-founder and back-end development team lead, I helped create a college-specific platform for buying and selling second-hand furniture, ensuring a trustworthy and efficient marketplace for students. I utilized AWS Cognito for user authentication, enabling secure login and email verification. I created API endpoints for CRUD operations and managed deployment on AWS using Lambda, S3, and RDS. Additionally, I developed backend scripts and automation tools in Python, which significantly enhanced system efficiency.
-                  </p>
-              </div>
-              <div class="resume-date text-md-right">
-                  <span class="text-primary">June 2024 – Jan 2025</span>
-              </div>
+          <div class="project-card accent-red fade-up">
+            <div class="project-date">Jan 2026</div>
+            <h3 class="mb-0">Ball Knowledge</h3>
+            <div class="subheading">Sports Roster Trivia Web App</div>
+            <p>Built a full-stack sports trivia game where players race against the clock to name NBA and NFL roster members from any team and season. Features real-time multiplayer lobbies with live scoring via Supabase Realtime, autocomplete suggestions, and coverage spanning NBA rosters from 1985-2024 and NFL rosters from 2000-2024. React + TypeScript frontend with two Python FastAPI microservices, deployed on Vercel and Render.</p>
+            <div class="project-links">
+              <a href="https://ball-knowledge-delta.vercel.app/" target="_blank" class="btn-primary-link">Play Now</a>
+              <a href="https://github.com/josyao1/BallKnowledge" target="_blank" class="btn-outline-link"><i class="fa fa-github"></i> GitHub</a>
+            </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                  <h3 class="mb-0">Sentiment & Digit Recognition Web App</h3>
-                  <div class="subheading mb-3">Self-Guided Passion Project</div>
-                  <p>
-                      I developed a sentiment analysis model using TensorFlow and Keras, and implemented a handwritten digit recognition system with CNNs for image classification on the MNIST dataset. The web application, created using Flask for backend model inference and Pygame for a frontend digit input interface, integrates multiple machine learning models into a seamless user interface for real-time predictions. <a href="https://github.com/josyao1/sentiment-analysis" target="_blank">Sentiment Analyst/</a><a href = "https://github.com/josyao1/number-recognition" target="_blank">Number Recognition</a> 
-                  </p>
-              </div>
-              <div class="resume-date text-md-right">
-                  <span class="text-primary">June 2024 – Sept 2024</span>
-              </div>
+          <div class="project-card accent-blue fade-up">
+            <div class="project-date">June 2024 - Jan 2025</div>
+            <h3 class="mb-0">SomethingSold</h3>
+            <div class="subheading">College Furniture Marketplace Startup</div>
+            <p>Co-founded and led backend development for a college-specific platform for buying and selling second-hand furniture. Built secure authentication with AWS Cognito, created RESTful API endpoints for CRUD operations, and managed cloud deployment using Lambda, S3, and RDS. Developed Python automation tools that significantly improved system efficiency.</p>
+            <div class="project-links">
+              <a href="blog/somethingsold.html" class="btn-outline-link">Read the Story</a>
+            </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                  <h3 class="mb-0">Fantasy Football Predictor</h3>
-                  <div class="subheading mb-3">Self-Guided Passion Project</div>
-                  <p>
-                      I created a predictive analysis model for the 2024 NFL season using TensorFlow, PyTorch, and scikit-learn. I designed and trained multiple regression models to forecast top players, conducted hyperparameter tuning and cross-validation to optimize model performance, and visualized predictions using Seaborn and Matplotlib. <a href="https://github.com/josyao1/fantasyFootballML" target="_blank">View on GitHub</a>
-                  </p>
-              </div>
-              <div class="resume-date text-md-right">
-                  <span class="text-primary">Jan 2024 - Apr 2024</span>
-              </div>
+          <div class="project-card accent-green fade-up">
+            <div class="project-date">June 2024 - Sept 2024</div>
+            <h3 class="mb-0">Sentiment & Digit Recognition</h3>
+            <div class="subheading">ML Web Application</div>
+            <p>Developed a sentiment analysis model using TensorFlow/Keras and a handwritten digit recognition system with CNNs on the MNIST dataset. Built a Flask backend for model inference with a Pygame frontend for digit input, integrating multiple ML models into a seamless interface for real-time predictions.</p>
+            <div class="project-links">
+              <a href="https://github.com/josyao1/sentiment-analysis" target="_blank" class="btn-outline-link"><i class="fa fa-github"></i> Sentiment</a>
+              <a href="https://github.com/josyao1/number-recognition" target="_blank" class="btn-outline-link"><i class="fa fa-github"></i> Digit Recognition</a>
+            </div>
+          </div>
+
+          <div class="project-card accent-orange fade-up">
+            <div class="project-date">Jan 2024 - Apr 2024</div>
+            <h3 class="mb-0">Fantasy Football Predictor</h3>
+            <div class="subheading">ML Prediction Model</div>
+            <p>Created a predictive analysis model for the 2024 NFL season using TensorFlow, PyTorch, and scikit-learn. Designed and trained multiple regression models to forecast top players, conducted hyperparameter tuning and cross-validation, and visualized predictions with Seaborn and Matplotlib.</p>
+            <div class="project-links">
+              <a href="https://github.com/josyao1/fantasyFootballML" target="_blank" class="btn-outline-link"><i class="fa fa-github"></i> GitHub</a>
+            </div>
           </div>
 
       </div>
@@ -302,38 +290,36 @@
           </ul>
         </div>
       </section>
-    
-      </section>
 
       <!-- Blog section with links to detailed posts -->
       <section id="blog" class="resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
             <h2 class="mb-5">Blog</h2>
             <div class="blog-posts">
-                <article class="blog-post">
+                <div class="blog-card fade-up">
+                    <span class="blog-tag">Technical</span>
                     <h3>Making Neural Networks</h3>
-                    <p>What I've learned about the various facets that come into desiging a good neural network.
-                    <a href="blog/neural-networks.html">Read More</a>
-                    </p>
-                </article>
-                <article class="blog-post">
+                    <p>What I've learned about the various facets that come into designing a good neural network.</p>
+                    <a href="blog/neural-networks.html" class="read-more">Read More &rarr;</a>
+                </div>
+                <div class="blog-card fade-up">
+                    <span class="blog-tag">Personal</span>
                     <h3>My Summer 2024</h3>
-                    <p>How I kept myself busy this summer.
-                    <a href="blog/summer.html">Read More</a>
-                  </p>
-                </article>
-                <article class = "blog-post">
-                  <h3>How Regressions Actually Work</h3>
-                  <p>There are so many different regression models. How do they work and which one should you use?
-                    <a href = "blog/regression.html">Read More</a>
-                  </p>
-                </article>
-                <article class = "blog-post"></article>
-                  <h3>From College Project to Startup: Building SomethingSold</h3>
-                  <p>My cool journey working with some friends and building a startup from scratch!
-                    <a href = "blog/somethingsold.html">Read More</a>
-                  </p>
-                </article>
+                    <p>How I kept myself busy this summer.</p>
+                    <a href="blog/summer.html" class="read-more">Read More &rarr;</a>
+                </div>
+                <div class="blog-card fade-up">
+                    <span class="blog-tag">Technical</span>
+                    <h3>How Regressions Actually Work</h3>
+                    <p>There are so many different regression models. How do they work and which one should you use?</p>
+                    <a href="blog/regression.html" class="read-more">Read More &rarr;</a>
+                </div>
+                <div class="blog-card fade-up">
+                    <span class="blog-tag">Startup</span>
+                    <h3>From College Project to Startup: Building SomethingSold</h3>
+                    <p>My cool journey working with some friends and building a startup from scratch!</p>
+                    <a href="blog/somethingsold.html" class="read-more">Read More &rarr;</a>
+                </div>
             </div>
           </div>
         </section>
@@ -350,7 +336,9 @@
 
       <!-- Dark Mode toggler-->
       <div id="dark-mode-toggle-container">
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+          <i class="fa fa-moon-o" id="dark-mode-icon"></i>
+        </button>
       </div>
       
 
