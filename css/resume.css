@@ -29,7 +29,21 @@ h1 {
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Section header accent underline */
+.my-auto > h2.mb-5::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(135deg, #76449a, #a855f7);
+  margin-top: 0.4rem;
+  border-radius: 2px;
 }
 
 .subheading {
@@ -248,6 +262,37 @@ section.resume-section:nth-of-type(even) {
   background: linear-gradient(135deg, #76449a, #a855f7);
   margin-top: 0.5rem;
   border-radius: 2px;
+}
+
+/* Contact bar */
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-bar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-bar i {
+  color: #76449a;
+  font-size: 0.85rem;
+}
+
+.contact-bar a {
+  color: #76449a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-bar a:hover {
+  text-decoration: underline;
 }
 
 /* About section personality text */
@@ -666,6 +711,26 @@ body.dark-mode section.resume-section {
   border-bottom-color: #2d2d44;
 }
 
+body.dark-mode .list-social-icons a {
+  color: #bb86fc;
+}
+
+body.dark-mode .list-social-icons a:hover {
+  color: #cf6bff;
+}
+
+body.dark-mode .contact-bar {
+  color: #aaa;
+}
+
+body.dark-mode .contact-bar i {
+  color: #bb86fc;
+}
+
+body.dark-mode .contact-bar a {
+  color: #bb86fc;
+}
+
 body.dark-mode .about-greeting {
   color: #ccc;
 }
@@ -674,7 +739,8 @@ body.dark-mode .about-greeting .highlight {
   color: #bb86fc;
 }
 
-body.dark-mode #about h1::after {
+body.dark-mode #about h1::after,
+body.dark-mode .my-auto > h2.mb-5::after {
   background: linear-gradient(135deg, #bb86fc, #cf6bff);
 }
 
@@ -812,4 +878,5 @@ body.dark-mode .interest-card i {
 body.dark-mode .interest-card p {
   color: #ccc;
 }
+
 
