@@ -349,6 +349,34 @@ section.resume-section:nth-of-type(even) {
 .project-card.accent-green .project-date { color: #27ae60; }
 .project-card.accent-orange { border-left-color: #e67e22; }
 .project-card.accent-orange .project-date { color: #e67e22; }
+.project-card.accent-purple { border-left-color: #9b59b6; }
+.project-card.accent-purple .project-date { color: #9b59b6; }
+
+/* In-progress badge */
+.badge-wip {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* In-progress card dashed border style */
+.project-card.in-progress {
+  border-left-style: dashed;
+}
 
 /* Blog cards */
 .blog-card {
@@ -393,6 +421,213 @@ section.resume-section:nth-of-type(even) {
 .blog-card a.read-more {
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/* Experience cards */
+.exp-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #76449a;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.exp-card .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.exp-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.exp-card .subheading {
+  font-size: 1.1rem;
+}
+
+.exp-card .exp-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #76449a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.exp-card p {
+  margin-bottom: 0.5rem;
+}
+
+.exp-card .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tech-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f0e6f6;
+  color: #76449a;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Education cards */
+.edu-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #76449a;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.edu-card .edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.edu-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.edu-card .edu-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #76449a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.edu-card .subheading {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.edu-card .edu-minor {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+/* Achievement badges */
+.achievement-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge-achievement {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f0e6f6, #e8d5f5);
+  color: #76449a;
+  border: 1px solid rgba(118, 68, 154, 0.15);
+}
+
+.badge-achievement i {
+  font-size: 0.7rem;
+}
+
+/* Coursework tags */
+.coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.course-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  color: #555;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid #e9ecef;
+}
+
+/* Skill categories */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category .subheading i {
+  color: #76449a;
+  margin-right: 0.3rem;
+}
+
+/* Interest cards grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.interest-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.interest-card i {
+  font-size: 2rem;
+  color: #76449a;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.interest-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.interest-card p {
+  font-size: 0.88rem;
+  margin: 0;
 }
 
 /* Scroll fade-in animations */
@@ -480,6 +715,13 @@ body.dark-mode .project-card.accent-green { border-left-color: #55efc4; }
 body.dark-mode .project-card.accent-green .project-date { color: #55efc4; }
 body.dark-mode .project-card.accent-orange { border-left-color: #fdcb6e; }
 body.dark-mode .project-card.accent-orange .project-date { color: #fdcb6e; }
+body.dark-mode .project-card.accent-purple { border-left-color: #a29bfe; }
+body.dark-mode .project-card.accent-purple .project-date { color: #a29bfe; }
+
+body.dark-mode .badge-wip {
+  background: linear-gradient(135deg, #fdcb6e, #ffeaa7);
+  color: #1e1e2e;
+}
 
 body.dark-mode .blog-card {
   background: #1e1e2e;
@@ -513,5 +755,61 @@ body.dark-mode #dark-mode-toggle {
 
 body.dark-mode #dark-mode-toggle:hover {
   background-color: #cf6bff;
+}
+
+body.dark-mode .edu-card {
+  background: #1e1e2e;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .edu-card .edu-date {
+  color: #bb86fc;
+}
+
+body.dark-mode .edu-card .edu-minor {
+  color: #aaa;
+}
+
+body.dark-mode .badge-achievement {
+  background: linear-gradient(135deg, #2d2d44, #362d4a);
+  color: #bb86fc;
+  border-color: rgba(187, 134, 252, 0.2);
+}
+
+body.dark-mode .course-tag {
+  background: #2d2d44;
+  color: #ccc;
+  border-color: #3d3d55;
+}
+
+body.dark-mode .exp-card {
+  background: #1e1e2e;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .exp-card p {
+  color: #ccc;
+}
+
+body.dark-mode .exp-card .exp-date {
+  color: #bb86fc;
+}
+
+body.dark-mode .tech-tag {
+  background: #2d2d44;
+  color: #bb86fc;
+}
+
+body.dark-mode .interest-card {
+  background: #1e1e2e;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .interest-card i {
+  color: #bb86fc;
+}
+
+body.dark-mode .interest-card p {
+  color: #ccc;
 }
 

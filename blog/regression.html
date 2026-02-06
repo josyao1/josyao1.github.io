@@ -5,389 +5,373 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding Regression Techniques</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:700|Open+Sans:400,400i,600,700" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../css/blog.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Understanding Regression Techniques</h1>
-        <p class="subtitle">An Overview of Common Regression Models</p>
-        <p class="subtitle">Date: 8/15/2024</p>
-        <section style="margin: 20px 0;">
-            <button onclick="goBack()" class="styled-back-button">← Back</button>
-        </section>
-    </header>
-
-    <main>
-        <!-- Introduction Section -->
-         <br>
-        <section>
-            <p>As part of my Fantasy Football Machine Learning Capstone Project, I delved into various regression techniques. Understanding different regression models was crucial in building a model that could effectively predict player performance based on historical data. In this blog, I will walk you through some of the most common regression techniques, including their mathematical foundations, practical applications, and pros and cons.</p>
-        </section>
-        <br>
-
-        <!-- Linear Regression Section -->
-        <section>
-            <h2>1. Linear Regression</h2>
-            <p><strong>Concept:</strong></p>
-            <p>Linear regression is a fundamental statistical method used to model the relationship between a dependent variable and one or more independent variables. The goal is to find the best-fitting straight line through the data points that predicts the dependent variable (Y) based on the independent variable(s) (X). This line is known as the regression line and is represented by the equation:</p>
-            
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>The equation of a linear regression line is:</p>
-            <p>\[
-            Y = \beta_0 + \beta_1X + \epsilon
-            \]</p>
-            <p>Where:</p>
-            <ul>
-                <li><strong>Y</strong> is the dependent variable (what you're trying to predict).</li>
-                <li><strong>X</strong> is the independent variable (the input).</li>
-                <li><strong>\(\beta_0\)</strong> is the intercept of the regression line.</li>
-                <li><strong>\(\beta_1\)</strong> is the slope of the regression line (how much Y changes for a unit change in X).</li>
-                <li><strong>\(\epsilon\)</strong> is the error term (the difference between the actual and predicted values).</li>
-            </ul>
-            
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>The core objective of linear regression is to minimize the sum of squared errors (SSE) between the predicted values and the actual values. This is achieved through a process known as least squares estimation. The formula to minimize is:</p>
-            <p>\[
-            SSE = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2
-            \]</p>
-            <p>Where:</p>
-            <ul>
-                <li><strong>\(Y_i\)</strong> is the actual value.</li>
-                <li><strong>\(\hat{Y}_i\)</strong> is the predicted value.</li>
-            </ul>
-            <p>By adjusting the parameters \(\beta_0\) and \(\beta_1\), the model finds the line that minimizes the SSE, thereby providing the best fit for the data.</p>
-            
-            <!-- Image for Linear Regression (centered) -->
-            <div style="text-align: center;">
-                <img src="../img/linearregression.webp" alt="Linear Regression Visualization" style="max-width: 100%; height: auto;">
+    <article class="blog-post">
+        <header class="blog-header">
+            <a href="../index.html#blog" class="back-link"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+            <div class="blog-meta">
+                <span class="tag">Technical</span>
+                <time datetime="2024-08-15">August 15, 2024</time>
             </div>
-            
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Simple and easy to interpret.</li>
-                <li>Works well when the relationship between variables is approximately linear.</li>
-            </ul>
-            
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>Assumes a linear relationship between variables, which may not always be the case.</li>
-                <li>Sensitive to outliers, which can skew the results.</li>
-            </ul>
-        </section>
-        
-        
-        
-        <br>
+            <h1>Understanding Regression Techniques</h1>
+            <p class="blog-subtitle">An overview of common regression models</p>
+        </header>
 
-        <!-- Polynomial Regression Section -->
-        <section>
-            <h2>2. Polynomial Regression</h2>
-        
-            <p><strong>Concept:</strong></p>
-            <p>Polynomial regression is an extension of linear regression where the relationship between the independent variable (X) and the dependent variable (Y) is modeled as an nth-degree polynomial. Instead of fitting a straight line, polynomial regression fits a curve that best describes the data.</p>
-        
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>The equation for a polynomial regression model of degree n is:</p>
-            <p>\[
-            Y = \beta_0 + \beta_1X + \beta_2X^2 + \dots + \beta_nX^n + \epsilon
-            \]</p>
-            <p>Where:</p>
-            <ul>
-                <li><strong>Y</strong> is the dependent variable.</li>
-                <li><strong>X</strong> is the independent variable.</li>
-                <li><strong>\(\beta_0\)</strong> is the intercept.</li>
-                <li><strong>\(\beta_1, \beta_2, \dots, \beta_n\)</strong> are the coefficients of the polynomial terms.</li>
-                <li><strong>\(\epsilon\)</strong> is the error term.</li>
-            </ul>
-        
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>Like linear regression, the goal of polynomial regression is to minimize the sum of squared errors (SSE) between the predicted and actual values. The model adjusts the coefficients \(\beta_0, \beta_1, \beta_2, \dots, \beta_n\) to find the polynomial curve that best fits the data.</p>
-        
-            <p><strong>Use Cases:</strong></p>
-            <ul>
-                <li>When the relationship between the independent and dependent variables is non-linear but can be approximated by a polynomial function.</li>
-                <li>Useful in modeling more complex relationships, such as growth rates, market trends, and various natural phenomena.</li>
-            </ul>
-        
-            <!-- Image for Polynomial Regression (centered) -->
-            <div style="text-align: center;">
-                <img src="../img/poly.png" alt="Polynomial Regression Visualization" style="max-width: 100%; height: auto;">
-            </div>
-        
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>More flexible than linear regression; can model a wider range of relationships.</li>
-                <li>Can provide a better fit for data with non-linear relationships.</li>
-            </ul>
-        
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>Prone to overfitting, especially with higher-degree polynomials.</li>
-                <li>Can become computationally expensive as the degree of the polynomial increases.</li>
-                <li>Interpretability decreases as the model becomes more complex.</li>
-            </ul>
-        </section>
-        
-        
-        <br>
+        <div class="blog-content">
+            <!-- Introduction Section -->
+            <section>
+                <p>As part of my Fantasy Football Machine Learning Capstone Project, I delved into various regression techniques. Understanding different regression models was crucial in building a model that could effectively predict player performance based on historical data. In this blog, I will walk you through some of the most common regression techniques, including their mathematical foundations, practical applications, and pros and cons.</p>
+            </section>
 
-        <!-- Bayesian Regression Section -->
-        <section>
-            <h2>3. Bayesian Regression</h2>
+            <!-- Linear Regression Section -->
+            <section>
+                <h2>1. Linear Regression</h2>
+                <p><strong>Concept:</strong></p>
+                <p>Linear regression is a fundamental statistical method used to model the relationship between a dependent variable and one or more independent variables. The goal is to find the best-fitting straight line through the data points that predicts the dependent variable (Y) based on the independent variable(s) (X). This line is known as the regression line and is represented by the equation:</p>
 
-            <p><strong>Concept:</strong></p>
-            <p>Bayesian Regression is a statistical method that incorporates prior distributions into the regression analysis. Unlike traditional regression models that provide point estimates for the coefficients, Bayesian regression offers a probabilistic interpretation by treating the model parameters as random variables with their own distributions.</p>
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>The equation of a linear regression line is:</p>
+                <p>\[
+                Y = \beta_0 + \beta_1X + \epsilon
+                \]</p>
+                <p>Where:</p>
+                <ul>
+                    <li><strong>Y</strong> is the dependent variable (what you're trying to predict).</li>
+                    <li><strong>X</strong> is the independent variable (the input).</li>
+                    <li><strong>\(\beta_0\)</strong> is the intercept of the regression line.</li>
+                    <li><strong>\(\beta_1\)</strong> is the slope of the regression line (how much Y changes for a unit change in X).</li>
+                    <li><strong>\(\epsilon\)</strong> is the error term (the difference between the actual and predicted values).</li>
+                </ul>
 
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>In Bayesian regression, the goal is to update our beliefs about the parameters (coefficients) as we obtain more data. This is done using Bayes' theorem, which is expressed as:</p>
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>The core objective of linear regression is to minimize the sum of squared errors (SSE) between the predicted values and the actual values. This is achieved through a process known as least squares estimation. The formula to minimize is:</p>
+                <p>\[
+                SSE = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2
+                \]</p>
+                <p>Where:</p>
+                <ul>
+                    <li><strong>\(Y_i\)</strong> is the actual value.</li>
+                    <li><strong>\(\hat{Y}_i\)</strong> is the predicted value.</li>
+                </ul>
+                <p>By adjusting the parameters \(\beta_0\) and \(\beta_1\), the model finds the line that minimizes the SSE, thereby providing the best fit for the data.</p>
 
-            <p>\[
-            P(\beta \mid X, Y) = \frac{P(Y \mid X, \beta) \cdot P(\beta)}{P(Y \mid X)}
-            \]</p>
+                <!-- Image for Linear Regression (centered) -->
+                <div class="img-wrapper">
+                    <img src="../img/linearregression.webp" alt="Linear Regression Visualization">
+                </div>
 
-            <p>Where:</p>
-            <ul>
-                <li><strong>\(P(\beta \mid X, Y)\)</strong> is the posterior distribution of the coefficients given the data.</li>
-                <li><strong>\(P(Y \mid X, \beta)\)</strong> is the likelihood of the data given the coefficients.</li>
-                <li><strong>\(P(\beta)\)</strong> is the prior distribution of the coefficients.</li>
-                <li><strong>\(P(Y \mid X)\)</strong> is the marginal likelihood of the data.</li>
-            </ul>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Simple and easy to interpret.</li>
+                    <li>Works well when the relationship between variables is approximately linear.</li>
+                </ul>
 
-            <p>The posterior distribution is typically not analytically tractable, so it is often approximated using methods like Markov Chain Monte Carlo (MCMC) or variational inference.</p>
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Assumes a linear relationship between variables, which may not always be the case.</li>
+                    <li>Sensitive to outliers, which can skew the results.</li>
+                </ul>
+            </section>
 
-            <p>The image below provides a visual representation of the key concepts in Bayesian regression. The orange curve represents the prior distribution, which is our initial belief about the coefficients before observing any data. The blue curve is the likelihood, which represents the data's evidence concerning the coefficients. The green curve is the posterior distribution, which combines the prior with the likelihood to give us an updated belief about the coefficients after observing the data. This visualization highlights the relationship between the prior, likelihood, and posterior, and illustrates how Bayesian regression incorporates both prior knowledge and observed data to estimate the coefficients.</p>
+            <!-- Polynomial Regression Section -->
+            <section>
+                <h2>2. Polynomial Regression</h2>
 
-            <!-- Image for Bayesian Regression (centered) -->
-            <div style="text-align: center;">
-                <img src="../img/bayesian.png" alt="Bayesian Regression Visualization" style="max-width: 100%; height: auto;">
-            </div>
-            <!-- The image above should illustrate Bayesian regression, showing prior, likelihood, and posterior distributions as represented in the graph -->
+                <p><strong>Concept:</strong></p>
+                <p>Polynomial regression is an extension of linear regression where the relationship between the independent variable (X) and the dependent variable (Y) is modeled as an nth-degree polynomial. Instead of fitting a straight line, polynomial regression fits a curve that best describes the data.</p>
 
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>Bayesian regression minimizes errors by finding the most likely set of parameters given both the data and the prior information. The resulting model accounts for uncertainty in the parameter estimates by providing a distribution rather than a single point estimate.</p>
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>The equation for a polynomial regression model of degree n is:</p>
+                <p>\[
+                Y = \beta_0 + \beta_1X + \beta_2X^2 + \dots + \beta_nX^n + \epsilon
+                \]</p>
+                <p>Where:</p>
+                <ul>
+                    <li><strong>Y</strong> is the dependent variable.</li>
+                    <li><strong>X</strong> is the independent variable.</li>
+                    <li><strong>\(\beta_0\)</strong> is the intercept.</li>
+                    <li><strong>\(\beta_1, \beta_2, \dots, \beta_n\)</strong> are the coefficients of the polynomial terms.</li>
+                    <li><strong>\(\epsilon\)</strong> is the error term.</li>
+                </ul>
 
-            <p><strong>Use Cases:</strong></p>
-            <ul>
-                <li>When prior knowledge or assumptions about the parameters are available and can be formally incorporated into the model.</li>
-                <li>In situations where it is important to quantify the uncertainty in the parameter estimates, such as in scientific research or decision-making processes.</li>
-            </ul>
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>Like linear regression, the goal of polynomial regression is to minimize the sum of squared errors (SSE) between the predicted and actual values. The model adjusts the coefficients \(\beta_0, \beta_1, \beta_2, \dots, \beta_n\) to find the polynomial curve that best fits the data.</p>
 
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Provides a full distribution over parameters, allowing for uncertainty quantification.</li>
-                <li>Can incorporate prior knowledge or beliefs into the model.</li>
-                <li>Flexible and can be applied to a wide range of models and data types.</li>
-            </ul>
+                <p><strong>Use Cases:</strong></p>
+                <ul>
+                    <li>When the relationship between the independent and dependent variables is non-linear but can be approximated by a polynomial function.</li>
+                    <li>Useful in modeling more complex relationships, such as growth rates, market trends, and various natural phenomena.</li>
+                </ul>
 
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>Computationally intensive, especially for large datasets or complex models.</li>
-                <li>Requires careful selection of prior distributions, which can influence the results.</li>
-                <li>More complex to implement and interpret compared to traditional regression methods.</li>
-            </ul>
-        </section>
-    
-        
-        <br>
+                <!-- Image for Polynomial Regression (centered) -->
+                <div class="img-wrapper">
+                    <img src="../img/poly.png" alt="Polynomial Regression Visualization">
+                </div>
 
-        <!-- Ridge Regression Section -->
-        <section>
-            <h2>4. Ridge Regression</h2>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>More flexible than linear regression; can model a wider range of relationships.</li>
+                    <li>Can provide a better fit for data with non-linear relationships.</li>
+                </ul>
 
-            <p><strong>Concept:</strong></p>
-            <p>Ridge Regression, also known as Tikhonov regularization, is a technique used to address multicollinearity in linear regression models. It modifies the ordinary least squares (OLS) regression by adding a regularization term to the cost function. This regularization term shrinks the coefficients, thereby reducing the model's complexity and preventing overfitting.</p>
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Prone to overfitting, especially with higher-degree polynomials.</li>
+                    <li>Can become computationally expensive as the degree of the polynomial increases.</li>
+                    <li>Interpretability decreases as the model becomes more complex.</li>
+                </ul>
+            </section>
 
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>The cost function for Ridge Regression is represented as:</p>
-            <p>\[
-            J(\beta) = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2
-            \]</p>
-            <p>Where:</p>
-            <ul>
-                <li>\( J(\beta) \) is the cost function that Ridge Regression aims to minimize.</li>
-                <li>\( Y_i \) is the actual value of the dependent variable for the \( i \)-th observation.</li>
-                <li>\( \hat{Y}_i \) is the predicted value of the dependent variable for the \( i \)-th observation.</li>
-                <li>\( \lambda \) is the regularization parameter that controls the amount of shrinkage applied to the coefficients.</li>
-                <li>\( \beta_j \) represents the coefficients of the regression model.</li>
-            </ul>
+            <!-- Bayesian Regression Section -->
+            <section>
+                <h2>3. Bayesian Regression</h2>
 
-            <p>In Ridge Regression, the regularization term \(\lambda \sum_{j=1}^{p} \beta_j^2\) adds a penalty proportional to the square of the magnitude of the coefficients. By doing this, Ridge Regression shrinks the coefficients towards zero, but not exactly to zero, which helps to maintain the predictive power of the model while reducing multicollinearity.</p>
+                <p><strong>Concept:</strong></p>
+                <p>Bayesian Regression is a statistical method that incorporates prior distributions into the regression analysis. Unlike traditional regression models that provide point estimates for the coefficients, Bayesian regression offers a probabilistic interpretation by treating the model parameters as random variables with their own distributions.</p>
 
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>Ridge Regression minimizes errors by balancing the trade-off between fitting the data well and keeping the model parameters small. The regularization term prevents the model from overfitting by penalizing large coefficients. This is particularly useful when the number of predictors (features) is large, and some of them are highly correlated.</p>
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>In Bayesian regression, the goal is to update our beliefs about the parameters (coefficients) as we obtain more data. This is done using Bayes' theorem, which is expressed as:</p>
 
-            <p>The objective is to find the set of coefficients \( \beta_j \) that minimizes the following expression:</p>
-            <p>\[
-            \min_{\beta} \left[ \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right]
-            \]</p>
-            <p>Where \( \lambda \) controls the trade-off between minimizing the residual sum of squares (RSS) and shrinking the coefficients.</p>
+                <p>\[
+                P(\beta \mid X, Y) = \frac{P(Y \mid X, \beta) \cdot P(\beta)}{P(Y \mid X)}
+                \]</p>
 
-            <p><strong>Use Cases:</strong></p>
-            <ul>
-                <li>When there is multicollinearity in the dataset, meaning the independent variables are highly correlated.</li>
-                <li>In situations where you want to regularize the model to prevent overfitting.</li>
-                <li>When the number of predictors is large, and you need to control the complexity of the model.</li>
-            </ul>
+                <p>Where:</p>
+                <ul>
+                    <li><strong>\(P(\beta \mid X, Y)\)</strong> is the posterior distribution of the coefficients given the data.</li>
+                    <li><strong>\(P(Y \mid X, \beta)\)</strong> is the likelihood of the data given the coefficients.</li>
+                    <li><strong>\(P(\beta)\)</strong> is the prior distribution of the coefficients.</li>
+                    <li><strong>\(P(Y \mid X)\)</strong> is the marginal likelihood of the data.</li>
+                </ul>
 
-    
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Reduces model complexity and prevents overfitting.</li>
-                <li>Effectively handles multicollinearity in the dataset.</li>
-                <li>Maintains all predictors in the model, unlike Lasso Regression, which can shrink some coefficients to zero.</li>
-            </ul>
+                <p>The posterior distribution is typically not analytically tractable, so it is often approximated using methods like Markov Chain Monte Carlo (MCMC) or variational inference.</p>
 
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>All coefficients are shrunk by the same proportion, which might not be ideal in every situation.</li>
-                <li>Less interpretable than models without regularization.</li>
-            </ul>
-        </section>
+                <p>The image below provides a visual representation of the key concepts in Bayesian regression. The orange curve represents the prior distribution, which is our initial belief about the coefficients before observing any data. The blue curve is the likelihood, which represents the data's evidence concerning the coefficients. The green curve is the posterior distribution, which combines the prior with the likelihood to give us an updated belief about the coefficients after observing the data. This visualization highlights the relationship between the prior, likelihood, and posterior, and illustrates how Bayesian regression incorporates both prior knowledge and observed data to estimate the coefficients.</p>
 
-        <br>
+                <!-- Image for Bayesian Regression (centered) -->
+                <div class="img-wrapper">
+                    <img src="../img/bayesian.png" alt="Bayesian Regression Visualization">
+                </div>
+                <!-- The image above should illustrate Bayesian regression, showing prior, likelihood, and posterior distributions as represented in the graph -->
 
-        <!-- Lasso Regression Section -->
-        <section>
-            <h2>5. Lasso Regression</h2>
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>Bayesian regression minimizes errors by finding the most likely set of parameters given both the data and the prior information. The resulting model accounts for uncertainty in the parameter estimates by providing a distribution rather than a single point estimate.</p>
 
-            <p><strong>Concept:</strong></p>
-            <p>Lasso Regression, which stands for Least Absolute Shrinkage and Selection Operator, is a linear model that includes a regularization technique to prevent overfitting by penalizing large coefficients. What makes Lasso unique is its ability to not only shrink coefficients but to completely reduce some of them to zero, effectively performing feature selection. This makes Lasso particularly useful in situations where we have a large number of features, many of which might be irrelevant.</p>
+                <p><strong>Use Cases:</strong></p>
+                <ul>
+                    <li>When prior knowledge or assumptions about the parameters are available and can be formally incorporated into the model.</li>
+                    <li>In situations where it is important to quantify the uncertainty in the parameter estimates, such as in scientific research or decision-making processes.</li>
+                </ul>
 
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>The objective function of Lasso Regression is:</p>
-            <p>\[
-            J(\beta) = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} |\beta_j|
-            \]</p>
-            <p>Where:</p>
-            <ul>
-                <li>\( J(\beta) \) is the objective function that combines the least squares error with a regularization term.</li>
-                <li>\( Y_i \) is the observed value of the dependent variable.</li>
-                <li>\( \hat{Y}_i \) is the predicted value from the model.</li>
-                <li>\( \lambda \) is the regularization parameter, controlling the penalty on the coefficients.</li>
-                <li>\( \beta_j \) are the coefficients of the model.</li>
-            </ul>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Provides a full distribution over parameters, allowing for uncertainty quantification.</li>
+                    <li>Can incorporate prior knowledge or beliefs into the model.</li>
+                    <li>Flexible and can be applied to a wide range of models and data types.</li>
+                </ul>
 
-            <p>The key difference between Lasso and Ridge Regression lies in the nature of the regularization term. Lasso uses the L1 norm, or the sum of the absolute values of the coefficients, as the penalty. The L1 penalty has the effect of forcing some of the coefficients to be exactly zero when the penalty is strong enough, which is how Lasso performs feature selection.</p>
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Computationally intensive, especially for large datasets or complex models.</li>
+                    <li>Requires careful selection of prior distributions, which can influence the results.</li>
+                    <li>More complex to implement and interpret compared to traditional regression methods.</li>
+                </ul>
+            </section>
 
-            <p><strong>Mechanism:</strong></p>
-            <p>In Lasso Regression, the optimization process aims to minimize the objective function, which includes both the prediction error and the regularization term. As the regularization parameter \( \lambda \) increases, the penalty for large coefficients becomes more significant. This leads to a trade-off between the accuracy of the model and the complexity of the model (i.e., the number of non-zero coefficients).</p>
-            
-            <p>Mathematically, as the optimization algorithm iteratively adjusts the coefficients \( \beta_j \) to reduce the overall cost function, the L1 norm penalty shrinks the coefficients. If the reduction in prediction error for a particular coefficient does not justify the penalty added by the L1 term, the optimization process will drive that coefficient to zero, effectively removing the associated feature from the model.</p>
+            <!-- Ridge Regression Section -->
+            <section>
+                <h2>4. Ridge Regression</h2>
 
-            <p>This property is particularly beneficial in high-dimensional data, where the number of features \( p \) can be much larger than the number of observations \( n \). Lasso helps in identifying the most important features by eliminating irrelevant ones, making the model more interpretable and reducing the risk of overfitting.</p>
+                <p><strong>Concept:</strong></p>
+                <p>Ridge Regression, also known as Tikhonov regularization, is a technique used to address multicollinearity in linear regression models. It modifies the ordinary least squares (OLS) regression by adding a regularization term to the cost function. This regularization term shrinks the coefficients, thereby reducing the model's complexity and preventing overfitting.</p>
 
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>The main goal of Lasso Regression is to find the optimal balance between fitting the data well and keeping the model as simple as possible. By minimizing the sum of squared errors and applying the L1 penalty, Lasso achieves a solution where some coefficients are shrunk to zero. This results in a model that generalizes better to unseen data by avoiding overfitting and focusing on the most significant predictors.</p>
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>The cost function for Ridge Regression is represented as:</p>
+                <p>\[
+                J(\beta) = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2
+                \]</p>
+                <p>Where:</p>
+                <ul>
+                    <li>\( J(\beta) \) is the cost function that Ridge Regression aims to minimize.</li>
+                    <li>\( Y_i \) is the actual value of the dependent variable for the \( i \)-th observation.</li>
+                    <li>\( \hat{Y}_i \) is the predicted value of the dependent variable for the \( i \)-th observation.</li>
+                    <li>\( \lambda \) is the regularization parameter that controls the amount of shrinkage applied to the coefficients.</li>
+                    <li>\( \beta_j \) represents the coefficients of the regression model.</li>
+                </ul>
 
-            <p>The balance between fitting the data and regularizing the model is controlled by the regularization parameter \( \lambda \). A small \( \lambda \) allows the model to behave more like standard linear regression, fitting the data closely with potentially many non-zero coefficients. A large \( \lambda \) increases the penalty on the coefficients, resulting in a sparser model with fewer features, as more coefficients are driven to zero.</p>
+                <p>In Ridge Regression, the regularization term \(\lambda \sum_{j=1}^{p} \beta_j^2\) adds a penalty proportional to the square of the magnitude of the coefficients. By doing this, Ridge Regression shrinks the coefficients towards zero, but not exactly to zero, which helps to maintain the predictive power of the model while reducing multicollinearity.</p>
 
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Performs feature selection by driving some coefficients to zero.</li>
-                <li>Reduces model complexity and improves interpretability.</li>
-                <li>Helps prevent overfitting by controlling the number of active features.</li>
-            </ul>
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>Ridge Regression minimizes errors by balancing the trade-off between fitting the data well and keeping the model parameters small. The regularization term prevents the model from overfitting by penalizing large coefficients. This is particularly useful when the number of predictors (features) is large, and some of them are highly correlated.</p>
 
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>Can be sensitive to the choice of the regularization parameter \( \lambda \).</li>
-                <li>May struggle with datasets where the number of observations is less than the number of features.</li>
-                <li>Computationally intensive for large datasets.</li>
-            </ul>
+                <p>The objective is to find the set of coefficients \( \beta_j \) that minimizes the following expression:</p>
+                <p>\[
+                \min_{\beta} \left[ \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right]
+                \]</p>
+                <p>Where \( \lambda \) controls the trade-off between minimizing the residual sum of squares (RSS) and shrinking the coefficients.</p>
 
-            <p><strong>Video Resource:</strong></p>
-            <p>Understanding the differences between Ridge and Lasso Regression can be challenging, but I found this <a href="https://www.youtube.com/watch?v=Xm2C_gTAl8c" target="_blank">YouTube video</a> by Josh Starmer exceptionally helpful in breaking down the concepts. The video clearly explains how Ridge Regression shrinks coefficients towards zero but does not eliminate them, whereas Lasso Regression can reduce coefficients to exactly zero, effectively performing feature selection. The visual explanations and intuitive analogies used in the video made it much easier to grasp the nuances of both techniques and understand when and why to use each. I highly recommend watching it to reinforce your understanding of these essential regression methods.</p>
-        </section>
+                <p><strong>Use Cases:</strong></p>
+                <ul>
+                    <li>When there is multicollinearity in the dataset, meaning the independent variables are highly correlated.</li>
+                    <li>In situations where you want to regularize the model to prevent overfitting.</li>
+                    <li>When the number of predictors is large, and you need to control the complexity of the model.</li>
+                </ul>
 
-        <br>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Reduces model complexity and prevents overfitting.</li>
+                    <li>Effectively handles multicollinearity in the dataset.</li>
+                    <li>Maintains all predictors in the model, unlike Lasso Regression, which can shrink some coefficients to zero.</li>
+                </ul>
 
-        <!-- Logistic Regression Section -->
-        <section>
-            <h2>6. Logistic Regression</h2>
-        
-            <p><strong>Concept:</strong></p>
-            <p>Logistic regression is a type of regression analysis used for predicting the probability of a binary outcome (i.e., two possible outcomes) based on one or more independent variables. Unlike linear regression, which predicts a continuous output, logistic regression predicts the probability that a given input point belongs to a particular class. The output is modeled using a logistic function, also known as the sigmoid function, which maps any real-valued number into a value between 0 and 1.</p>
-        
-            <p><strong>Mathematical Representation:</strong></p>
-            <p>The logistic function is defined as:</p>
-            <p>\[
-            \sigma(z) = \frac{1}{1 + e^{-z}}
-            \]</p>
-            <p>where:</p>
-            <ul>
-                <li>\(z\) is the linear combination of input features, \(z = \beta_0 + \beta_1X_1 + \beta_2X_2 + \ldots + \beta_nX_n\).</li>
-                <li>\(\sigma(z)\) is the output of the logistic function, representing the probability that the dependent variable is 1 (e.g., the event of interest occurs).</li>
-            </ul>
-        
-            <p><strong>Minimizing Errors:</strong></p>
-            <p>The goal of logistic regression is to find the parameters \( \beta_0, \beta_1, \ldots, \beta_n \) that best fit the data. This is typically done by maximizing the likelihood function, which represents the probability of the observed data given the parameters. This process is known as Maximum Likelihood Estimation (MLE). The likelihood function for logistic regression is:</p>
-            <p>\[
-            L(\beta) = \prod_{i=1}^{m} \sigma(z_i)^{y_i} (1 - \sigma(z_i))^{1 - y_i}
-            \]</p>
-            <p>where:</p>
-            <ul>
-                <li>\(y_i\) is the actual label (0 or 1) of the \(i\)th data point.</li>
-                <li>\(\sigma(z_i)\) is the predicted probability for the \(i\)th data point.</li>
-                <li>\(m\) is the number of data points.</li>
-            </ul>
-            <p>Maximizing this likelihood function is equivalent to minimizing the negative log-likelihood (NLL), which is often used as the loss function in logistic regression:</p>
-            <p>\[
-            NLL(\beta) = -\sum_{i=1}^{m} \left[ y_i \log(\sigma(z_i)) + (1 - y_i) \log(1 - \sigma(z_i)) \right]
-            \]</p>
-        
-            <p><strong>Use Cases:</strong></p>
-            <ul>
-                <li>Logistic regression is widely used in binary classification tasks, such as spam detection (spam vs. not spam), disease diagnosis (disease vs. no disease), and many other scenarios where the outcome is categorical.</li>
-                <li>It is also used in estimating the odds of an event occurring, providing not just a binary decision but also the associated probability.</li>
-            </ul>
-        
-            <div style="text-align: center;">
-                <img src="../img/logistic.png" alt="Logistic Regression Visualization" style="max-width: 100%; height: auto;">
-            </div>
-        
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Easy to implement and interpret, especially with binary outcomes.</li>
-                <li>Outputs probabilities, which can be useful for decision-making processes.</li>
-                <li>Can be extended to multi-class classification using techniques like One-vs-Rest or Softmax Regression.</li>
-            </ul>
-        
-            <p><strong>Limitations:</strong></p>
-            <ul>
-                <li>Assumes a linear relationship between the independent variables and the log-odds of the outcome, which may not hold in all cases.</li>
-                <li>Can struggle with high-dimensional data (many features) without regularization.</li>
-                <li>May not perform well with imbalanced datasets where one class significantly outnumbers the other.</li>
-            </ul>
-        </section>
-        
-        <br>
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>All coefficients are shrunk by the same proportion, which might not be ideal in every situation.</li>
+                    <li>Less interpretable than models without regularization.</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Conclusion</h2>
-            <p>After exploring various regression techniques, I applied them to my Fantasy Football ML Capstone project to predict player performance. Among the methods I tested, <strong>Ridge Regression</strong> emerged as the most effective. Ridge Regression's ability to handle multicollinearity by introducing a penalty to large coefficients helped create a more stable and generalizable model, which was crucial given the complexity of the player performance data.</p>
+            <!-- Lasso Regression Section -->
+            <section>
+                <h2>5. Lasso Regression</h2>
 
-            <p><strong>Linear Regression</strong> served as a baseline model, offering simplicity and interpretability, but it lacked the robustness needed for the intricate relationships in the dataset. <strong>Lasso Regression</strong>, which performs feature selection by shrinking some coefficients to zero, was particularly useful in identifying the most relevant player statistics, but it sometimes oversimplified the model.</p>
+                <p><strong>Concept:</strong></p>
+                <p>Lasso Regression, which stands for Least Absolute Shrinkage and Selection Operator, is a linear model that includes a regularization technique to prevent overfitting by penalizing large coefficients. What makes Lasso unique is its ability to not only shrink coefficients but to completely reduce some of them to zero, effectively performing feature selection. This makes Lasso particularly useful in situations where we have a large number of features, many of which might be irrelevant.</p>
 
-            <p>Interestingly, the <strong>Random Forest</strong> approach, though not a regression method in the traditional sense, provided an ensemble learning technique that improved predictive accuracy by averaging the results of multiple decision trees. This method's ability to capture non-linear relationships in the data made it an excellent complementary approach to the regression models.</p>
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>The objective function of Lasso Regression is:</p>
+                <p>\[
+                J(\beta) = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 + \lambda \sum_{j=1}^{p} |\beta_j|
+                \]</p>
+                <p>Where:</p>
+                <ul>
+                    <li>\( J(\beta) \) is the objective function that combines the least squares error with a regularization term.</li>
+                    <li>\( Y_i \) is the observed value of the dependent variable.</li>
+                    <li>\( \hat{Y}_i \) is the predicted value from the model.</li>
+                    <li>\( \lambda \) is the regularization parameter, controlling the penalty on the coefficients.</li>
+                    <li>\( \beta_j \) are the coefficients of the model.</li>
+                </ul>
 
-            <p>Ultimately, the combination of <strong>Ridge Regression</strong> for stability and <strong>Random Forest</strong> for capturing complex patterns allowed me to build a well-rounded predictive model for Fantasy Football player performance. This experience underscored the importance of selecting the right tools and methods for the task at hand, considering both the nature of the data and the specific goals of the analysis.</p>
-        </section>
+                <p>The key difference between Lasso and Ridge Regression lies in the nature of the regularization term. Lasso uses the L1 norm, or the sum of the absolute values of the coefficients, as the penalty. The L1 penalty has the effect of forcing some of the coefficients to be exactly zero when the penalty is strong enough, which is how Lasso performs feature selection.</p>
 
+                <p><strong>Mechanism:</strong></p>
+                <p>In Lasso Regression, the optimization process aims to minimize the objective function, which includes both the prediction error and the regularization term. As the regularization parameter \( \lambda \) increases, the penalty for large coefficients becomes more significant. This leads to a trade-off between the accuracy of the model and the complexity of the model (i.e., the number of non-zero coefficients).</p>
 
-        <section id="sources">
-            <h2>Sources</h2>
-            <ul>
-                <li><a href="https://medium.com/@curiositydeck/popular-neural-networks-layers-43e02bce6bce" target="_blank">Understanding Regression Models - Curiosity Deck on Medium</a></li>
-                <li><a href="https://pujappathak.medium.com/the-mathematics-behind-linear-regression-fb4db1ebd7b5" target="_blank">The Mathematics Behind Linear Regression - Pujap Pathak on Medium</a></li>
-                <li><a href="https://www.cheatsheets.aqeel-anwar.com" target="_blank">Cheat Sheet - Regression Analysis by Aqeel Anwar</a></li>
-            </ul>
-        </section>
-    </main>
+                <p>Mathematically, as the optimization algorithm iteratively adjusts the coefficients \( \beta_j \) to reduce the overall cost function, the L1 norm penalty shrinks the coefficients. If the reduction in prediction error for a particular coefficient does not justify the penalty added by the L1 term, the optimization process will drive that coefficient to zero, effectively removing the associated feature from the model.</p>
 
-    <script src = "../js/backbutton.js"></script>
+                <p>This property is particularly beneficial in high-dimensional data, where the number of features \( p \) can be much larger than the number of observations \( n \). Lasso helps in identifying the most important features by eliminating irrelevant ones, making the model more interpretable and reducing the risk of overfitting.</p>
+
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>The main goal of Lasso Regression is to find the optimal balance between fitting the data well and keeping the model as simple as possible. By minimizing the sum of squared errors and applying the L1 penalty, Lasso achieves a solution where some coefficients are shrunk to zero. This results in a model that generalizes better to unseen data by avoiding overfitting and focusing on the most significant predictors.</p>
+
+                <p>The balance between fitting the data and regularizing the model is controlled by the regularization parameter \( \lambda \). A small \( \lambda \) allows the model to behave more like standard linear regression, fitting the data closely with potentially many non-zero coefficients. A large \( \lambda \) increases the penalty on the coefficients, resulting in a sparser model with fewer features, as more coefficients are driven to zero.</p>
+
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Performs feature selection by driving some coefficients to zero.</li>
+                    <li>Reduces model complexity and improves interpretability.</li>
+                    <li>Helps prevent overfitting by controlling the number of active features.</li>
+                </ul>
+
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Can be sensitive to the choice of the regularization parameter \( \lambda \).</li>
+                    <li>May struggle with datasets where the number of observations is less than the number of features.</li>
+                    <li>Computationally intensive for large datasets.</li>
+                </ul>
+
+                <p><strong>Video Resource:</strong></p>
+                <p>Understanding the differences between Ridge and Lasso Regression can be challenging, but I found this <a href="https://www.youtube.com/watch?v=Xm2C_gTAl8c" target="_blank">YouTube video</a> by Josh Starmer exceptionally helpful in breaking down the concepts. The video clearly explains how Ridge Regression shrinks coefficients towards zero but does not eliminate them, whereas Lasso Regression can reduce coefficients to exactly zero, effectively performing feature selection. The visual explanations and intuitive analogies used in the video made it much easier to grasp the nuances of both techniques and understand when and why to use each. I highly recommend watching it to reinforce your understanding of these essential regression methods.</p>
+            </section>
+
+            <!-- Logistic Regression Section -->
+            <section>
+                <h2>6. Logistic Regression</h2>
+
+                <p><strong>Concept:</strong></p>
+                <p>Logistic regression is a type of regression analysis used for predicting the probability of a binary outcome (i.e., two possible outcomes) based on one or more independent variables. Unlike linear regression, which predicts a continuous output, logistic regression predicts the probability that a given input point belongs to a particular class. The output is modeled using a logistic function, also known as the sigmoid function, which maps any real-valued number into a value between 0 and 1.</p>
+
+                <p><strong>Mathematical Representation:</strong></p>
+                <p>The logistic function is defined as:</p>
+                <p>\[
+                \sigma(z) = \frac{1}{1 + e^{-z}}
+                \]</p>
+                <p>where:</p>
+                <ul>
+                    <li>\(z\) is the linear combination of input features, \(z = \beta_0 + \beta_1X_1 + \beta_2X_2 + \ldots + \beta_nX_n\).</li>
+                    <li>\(\sigma(z)\) is the output of the logistic function, representing the probability that the dependent variable is 1 (e.g., the event of interest occurs).</li>
+                </ul>
+
+                <p><strong>Minimizing Errors:</strong></p>
+                <p>The goal of logistic regression is to find the parameters \( \beta_0, \beta_1, \ldots, \beta_n \) that best fit the data. This is typically done by maximizing the likelihood function, which represents the probability of the observed data given the parameters. This process is known as Maximum Likelihood Estimation (MLE). The likelihood function for logistic regression is:</p>
+                <p>\[
+                L(\beta) = \prod_{i=1}^{m} \sigma(z_i)^{y_i} (1 - \sigma(z_i))^{1 - y_i}
+                \]</p>
+                <p>where:</p>
+                <ul>
+                    <li>\(y_i\) is the actual label (0 or 1) of the \(i\)th data point.</li>
+                    <li>\(\sigma(z_i)\) is the predicted probability for the \(i\)th data point.</li>
+                    <li>\(m\) is the number of data points.</li>
+                </ul>
+                <p>Maximizing this likelihood function is equivalent to minimizing the negative log-likelihood (NLL), which is often used as the loss function in logistic regression:</p>
+                <p>\[
+                NLL(\beta) = -\sum_{i=1}^{m} \left[ y_i \log(\sigma(z_i)) + (1 - y_i) \log(1 - \sigma(z_i)) \right]
+                \]</p>
+
+                <p><strong>Use Cases:</strong></p>
+                <ul>
+                    <li>Logistic regression is widely used in binary classification tasks, such as spam detection (spam vs. not spam), disease diagnosis (disease vs. no disease), and many other scenarios where the outcome is categorical.</li>
+                    <li>It is also used in estimating the odds of an event occurring, providing not just a binary decision but also the associated probability.</li>
+                </ul>
+
+                <div class="img-wrapper">
+                    <img src="../img/logistic.png" alt="Logistic Regression Visualization">
+                </div>
+
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Easy to implement and interpret, especially with binary outcomes.</li>
+                    <li>Outputs probabilities, which can be useful for decision-making processes.</li>
+                    <li>Can be extended to multi-class classification using techniques like One-vs-Rest or Softmax Regression.</li>
+                </ul>
+
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Assumes a linear relationship between the independent variables and the log-odds of the outcome, which may not hold in all cases.</li>
+                    <li>Can struggle with high-dimensional data (many features) without regularization.</li>
+                    <li>May not perform well with imbalanced datasets where one class significantly outnumbers the other.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Conclusion</h2>
+                <p>After exploring various regression techniques, I applied them to my Fantasy Football ML Capstone project to predict player performance. Among the methods I tested, <strong>Ridge Regression</strong> emerged as the most effective. Ridge Regression's ability to handle multicollinearity by introducing a penalty to large coefficients helped create a more stable and generalizable model, which was crucial given the complexity of the player performance data.</p>
+
+                <p><strong>Linear Regression</strong> served as a baseline model, offering simplicity and interpretability, but it lacked the robustness needed for the intricate relationships in the dataset. <strong>Lasso Regression</strong>, which performs feature selection by shrinking some coefficients to zero, was particularly useful in identifying the most relevant player statistics, but it sometimes oversimplified the model.</p>
+
+                <p>Interestingly, the <strong>Random Forest</strong> approach, though not a regression method in the traditional sense, provided an ensemble learning technique that improved predictive accuracy by averaging the results of multiple decision trees. This method's ability to capture non-linear relationships in the data made it an excellent complementary approach to the regression models.</p>
+
+                <p>Ultimately, the combination of <strong>Ridge Regression</strong> for stability and <strong>Random Forest</strong> for capturing complex patterns allowed me to build a well-rounded predictive model for Fantasy Football player performance. This experience underscored the importance of selecting the right tools and methods for the task at hand, considering both the nature of the data and the specific goals of the analysis.</p>
+            </section>
+
+            <section id="sources">
+                <h2>Sources</h2>
+                <ul>
+                    <li><a href="https://medium.com/@curiositydeck/popular-neural-networks-layers-43e02bce6bce" target="_blank">Understanding Regression Models - Curiosity Deck on Medium</a></li>
+                    <li><a href="https://pujappathak.medium.com/the-mathematics-behind-linear-regression-fb4db1ebd7b5" target="_blank">The Mathematics Behind Linear Regression - Pujap Pathak on Medium</a></li>
+                    <li><a href="https://www.cheatsheets.aqeel-anwar.com" target="_blank">Cheat Sheet - Regression Analysis by Aqeel Anwar</a></li>
+                </ul>
+            </section>
+        </div>
+    </article>
+
+    <script src="../js/backbutton.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First SWE Internship: Shipping Real Features at IXL</title>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <article class="blog-post">
+        <header class="blog-header">
+            <a href="../index.html#blog" class="back-link"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+            <div class="blog-meta">
+                <span class="tag">Internship</span>
+                <time datetime="2025-09-15">September 2025</time>
+            </div>
+            <h1>My First SWE Internship: Shipping Real Features at IXL</h1>
+            <p class="blog-subtitle">What I learned building classroom software used by real teachers</p>
+        </header>
+
+        <div class="blog-content">
+            <section>
+                <p>Walking into IXL Learning on my first day, I had the classic intern mix of excitement and "please don't let me break anything in production." By the end of the summer, I'd shipped multiple features on the Quizzes product — features that teachers were actively using in their classrooms. Here's what the experience taught me.</p>
+            </section>
+
+            <section>
+                <h2>Landing on the Quizzes Team</h2>
+                <p>I was placed on the team building IXL's teacher-facing Quizzes product. The idea was straightforward: give teachers a way to create, customize, and manage quizzes for their students. But "straightforward" in concept meant navigating a large, mature codebase with real users depending on it every day.</p>
+                <p>My first week was mostly onboarding — setting up the dev environment, reading docs, and getting up to speed on the codebase. The first pull request I submitted was a small bug fix, and seeing it go through code review felt like a milestone. The feedback was constructive and specific, and I quickly realized that code review isn't about gatekeeping — it's about learning.</p>
+            </section>
+
+            <section>
+                <h2>Building Search and Filtering</h2>
+                <p>One of my main projects was implementing search and filtering functionality across large teacher accounts. Teachers with hundreds of quizzes needed a fast, intuitive way to find what they were looking for.</p>
+                <p>The challenge wasn't just writing the search logic — it was making it performant. Teacher accounts varied wildly in size, and a naive approach would crawl on larger accounts. I learned to think about query optimization from the start rather than treating performance as an afterthought. On the backend, I worked on optimizing SQL queries to reduce load times — one query I rewrote cut response time significantly by restructuring joins and adding appropriate indexes.</p>
+                <div class="callout">
+                    <strong>Key lesson:</strong> Performance isn't something you bolt on later. Thinking about how your code scales from day one saves you (and your team) a lot of pain down the road.
+                </div>
+            </section>
+
+            <section>
+                <h2>Rewriting React Components</h2>
+                <p>Another chunk of my work involved rewriting core React components. The existing components worked but had accumulated complexity over time. I got to tear them apart and rebuild them with cleaner state management and better separation of concerns.</p>
+                <p>This was where I learned the difference between "code that works" and "code that works and can be maintained." Writing components that other engineers would eventually read and modify forced me to think about naming, structure, and documentation differently than personal projects.</p>
+            </section>
+
+            <section>
+                <h2>From Figma to Production</h2>
+                <p>I also collaborated closely with designers, translating Figma mockups into production-ready UI. This was my first time working within a real design-to-engineering pipeline, and it taught me a lot about attention to detail. Pixel-perfect margins, consistent spacing, hover states — all the things I'd never think twice about on a personal project suddenly mattered.</p>
+                <p>The back-and-forth with designers was surprisingly fun. They'd have a vision, I'd flag what was technically tricky, and we'd iterate together to find something that looked great and was feasible to build.</p>
+            </section>
+
+            <section>
+                <h2>Debugging Race Conditions</h2>
+                <p>One of the more technically interesting problems I tackled was fixing race conditions in the quiz management flow. When multiple operations happened in quick succession — like a teacher rapidly editing and saving — the system could end up in an inconsistent state.</p>
+                <p>Debugging race conditions is humbling. The bug wouldn't always reproduce, and when it did, the symptoms were confusing. I learned to think carefully about concurrency, about what assumptions I was making about ordering, and about the importance of writing backend logic that's resilient to unexpected timing.</p>
+            </section>
+
+            <section>
+                <h2>What I Took Away</h2>
+                <p>Looking back on the summer, the technical skills were valuable — React patterns, SQL optimization, thinking about performance and concurrency. But the bigger lessons were about how software gets built at scale:</p>
+                <ul>
+                    <li><strong>Code review is a gift.</strong> Getting thorough feedback from senior engineers accelerated my growth more than any tutorial could.</li>
+                    <li><strong>Performance matters from day one.</strong> It's much harder to bolt on performance later than to think about it while designing.</li>
+                    <li><strong>Communication is engineering.</strong> The time I spent aligning with designers, updating the team in standups, and writing clear PR descriptions was as important as the code itself.</li>
+                    <li><strong>Shipping feels different when it's real.</strong> Knowing that actual teachers in actual classrooms were using features I built gave the work a weight that personal projects never had.</li>
+                </ul>
+                <p>This internship solidified that I want to build software that people rely on. There's something deeply satisfying about seeing your work in the hands of real users, knowing it's making their day a little easier.</p>
+            </section>
+        </div>
+    </article>
+
+    <script src="../js/backbutton.js"></script>
+</body>
+
+</html>

@@ -116,54 +116,77 @@
       <!-- Professional Experience Section -->
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
       <div class="my-auto">
-          <h2 class="mb-5">Professional Experience</h2>
+          <h2 class="mb-5">Experience</h2>
 
-         <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineering Intern</h3>
-              <div class="subheading mb-3">IXL Learning</div>
-              <p>
-                  I worked on the teacher-facing Quizzes product, building features used in live classrooms. 
-                  I implemented search and filtering logic across large teacher accounts, rewrote core React 
-                  components, and optimized backend SQL queries to reduce load time and prevent race 
-                  conditions. I collaborated with designers to translate Figma specs into production-ready UI 
-                  components, improving teacher workflows for finding, customizing, and managing quizzes.
-              </p>
+          <div class="exp-card fade-up">
+            <div class="exp-header">
+              <div>
+                <h3 class="mb-0">Software Engineering Intern</h3>
+                <div class="subheading">IXL Learning</div>
+              </div>
+              <span class="exp-date">Jun 2025 – Sept 2025</span>
+            </div>
+            <p>Worked on the teacher-facing Quizzes product, building features used in live classrooms. Implemented search and filtering logic across large teacher accounts, rewrote core React components, and optimized backend SQL queries to reduce load time and prevent race conditions. Collaborated with designers to translate Figma specs into production-ready UI.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Figma</span>
+            </div>
           </div>
-          <div class="resume-date text-md-right">
-              <span class="text-primary">Jun 2025 – Sept 2025</span>
+
+          <div class="exp-card fade-up">
+            <div class="exp-header">
+              <div>
+                <h3 class="mb-0">Research Assistant</h3>
+                <div class="subheading">MU Collective — Northwestern University</div>
+              </div>
+              <span class="exp-date">Sept 2024 – June 2025</span>
+            </div>
+            <p>Collaborated with a PhD student to develop a multi-stage pipeline automating the generation and validation of visualization literacy assessment items. Integrated GPT-4 APIs for content creation, optimized data workflows with R and Pandas, and gathered educator feedback to align outputs with pedagogical standards.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Tableau</span>
+            </div>
           </div>
-      </div>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                  <h3 class="mb-0">Research Assistant</h3>
-                  <div class="subheading mb-3">MU Collective - Northwestern University</div>
-                  <p>
-                    As a Research Assistant at Northwestern University, I collaborate closely with a PhD student to develop a multi-stage pipeline that automates the generation and validation of visualization literacy assessment items. I integrated GPT-4 APIs for efficient content creation utilizing tools like TypeScript, Python, and Node.js, while optimizing workflows with R (ggplot2), Pandas, and SQL for seamless data processing and visualization. I engage with educators to gather feedback through platforms like Tableau, translating insights into refinements that align generated items with pedagogical standards.                  
-                  </p>
+
+          <div class="exp-card fade-up">
+            <div class="exp-header">
+              <div>
+                <h3 class="mb-0">Data Analysis Intern</h3>
+                <div class="subheading">Project Invent</div>
               </div>
-              <div class="resume-date text-md-right">
-                  <span class="text-primary">Sept 2024 – June 2025</span>
-              </div>
-          </div> 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                  <h3 class="mb-0">Data Analysis and Metric Development Intern</h3>
-                  <div class="subheading mb-3">Project Invent - Design Thinking Program For Students Building a Better World</div>
-                  <p>
-                      During my internship, I analyzed year-end survey data from past clients using Python and R. I created visualizations with Altair in Python and Tableau to effectively communicate findings and support decision-making processes.
-                  </p>
-              </div>
-              <div class="resume-date text-md-right">
-                  <span class="text-primary">June 2023 – Sept 2023</span>
-              </div>
+              <span class="exp-date">June 2023 – Sept 2023</span>
+            </div>
+            <p>Analyzed year-end survey data from past clients using Python and R. Created visualizations with Altair and Tableau to communicate findings and support decision-making processes.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">R</span>
+              <span class="tech-tag">Altair</span>
+              <span class="tech-tag">Tableau</span>
+            </div>
           </div>
+
       </div>
     </section>
     <!-- Projects Section -->
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
       <div class="my-auto">
           <h2 class="mb-5">Projects</h2>
+
+          <div class="project-card accent-purple in-progress fade-up">
+            <div class="project-date">Feb 2026 - Present</div>
+            <h3 class="mb-0">RUBRIC <span class="badge-wip">In Progress</span></h3>
+            <div class="subheading">AI-Powered Grading & Feedback Platform</div>
+            <p>Building a full-stack platform that streamlines the grading workflow for educators and students. Teachers can upload rubrics, grade student work, and send structured feedback. Students receive feedback, chat with an LLM to better understand it, then revise and resubmit their work — creating a tighter feedback loop that improves learning outcomes.</p>
+            <div class="project-links">
+              <a href="https://github.com/josyao1/RUBRIC" target="_blank" class="btn-outline-link"><i class="fa fa-github"></i> GitHub</a>
+            </div>
+          </div>
 
           <div class="project-card accent-red fade-up">
             <div class="project-date">Jan 2026</div>
@@ -211,83 +234,103 @@
     </section>
 
 
-      <!-- Education section highlighting your academic background -->
+      <!-- Education section -->
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
         <div class="my-auto">
           <h2 class="mb-5">Education</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Northwestern University</h3>
-              <div class="subheading mb-3">Bachelor of Science in Computer Science</div>
-              <div>Minor in Economics</div>
-              <p>GPA: 3.8/4.0 | 3x Dean's List </p>
+          <div class="edu-card fade-up">
+            <div class="edu-header">
+              <div>
+                <h3 class="mb-0">Northwestern University</h3>
+                <div class="subheading">Bachelor of Science in Computer Science</div>
+                <div class="edu-minor">Minor in Economics</div>
+              </div>
+              <span class="edu-date">Anticipated June 2026</span>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Anticipated June 2026</span>
+            <div class="achievement-badges">
+              <span class="badge-achievement"><i class="fa fa-star"></i> GPA: 3.8 / 4.0</span>
+              <span class="badge-achievement"><i class="fa fa-trophy"></i> 5x Dean's List</span>
+            </div>
+            <div class="subheading mb-2" style="font-size: 0.95rem;">Relevant Coursework</div>
+            <div class="coursework-tags">
+              <span class="course-tag">Data Structures & Algorithms</span>
+              <span class="course-tag">Algorithm Design & Analysis</span>
+              <span class="course-tag">Scalable Software</span>
+              <span class="course-tag">Machine Learning</span>
+              <span class="course-tag">Generative AI & LLMs</span>
+              <span class="course-tag">Computer Systems</span>
+              <span class="course-tag">Probability & Statistics</span>
+              <span class="course-tag">Discrete Math</span>
             </div>
           </div>
-          
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Nueva High School</h3>
-              <div class="subheading mb-3">San Mateo, California</div>
-              <p>SAT: 1580/1600 | National Merit Scholar</p>
+
+          <div class="edu-card fade-up">
+            <div class="edu-header">
+              <div>
+                <h3 class="mb-0">Nueva High School</h3>
+                <div class="subheading">San Mateo, California</div>
+              </div>
+              <span class="edu-date">August 2018 - June 2022</span>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2018 - June 2022</span>
+            <div class="achievement-badges">
+              <span class="badge-achievement"><i class="fa fa-pencil"></i> SAT: 1580 / 1600</span>
+              <span class="badge-achievement"><i class="fa fa-award"></i> National Merit Scholar</span>
+              <span class="badge-achievement"><i class="fa fa-trophy"></i> Tennis Captain</span>
+              <span class="badge-achievement"><i class="fa fa-users"></i> Peer Mentor</span>
+              <span class="badge-achievement"><i class="fa fa-book"></i> CS Teaching Assistant</span>
             </div>
-          </div>          
-          
+          </div>
 
         </div>
       </section>
-      <!-- Skills section showcasing your technical abilities -->
+      <!-- Skills section -->
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
-      
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <div class="tag-cloud">
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">C++</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Pandas</span>
+
+          <div class="skill-category">
+            <div class="subheading mb-3"><i class="fa fa-code"></i> Languages</div>
+            <div class="tag-cloud">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Java</span>
+              <span class="tag">C++</span>
+              <span class="tag">R</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
           </div>
-          <br>
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Developing and deploying machine learning models for practical applications.
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Back-end development, including creating API endpoints and managing cloud deployments.
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Data analysis and visualization using tools like Pandas, Altair, and Tableau.
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Full-stack web development experience, with both front-end and back-end technologies.
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Strong collaboration and communication skills, demonstrated through cross-functional team projects.
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Project management and problem-solving abilities, ensuring efficient and effective project completion.
-            </li>
-          </ul>
+
+          <div class="skill-category">
+            <div class="subheading mb-3"><i class="fa fa-cubes"></i> Frameworks &amp; Libraries</div>
+            <div class="tag-cloud">
+              <span class="tag">React</span>
+              <span class="tag">Flask</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Pandas</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="subheading mb-3"><i class="fa fa-wrench"></i> Tools &amp; Platforms</div>
+            <div class="tag-cloud">
+              <span class="tag">AWS</span>
+              <span class="tag">Git</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Vercel</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -296,6 +339,12 @@
         <div class="my-auto">
             <h2 class="mb-5">Blog</h2>
             <div class="blog-posts">
+                <div class="blog-card fade-up">
+                    <span class="blog-tag">Internship</span>
+                    <h3>My First SWE Internship: Shipping Real Features at IXL</h3>
+                    <p>What I learned building classroom software used by real teachers — from SQL optimization to race conditions.</p>
+                    <a href="blog/ixl-internship.html" class="read-more">Read More &rarr;</a>
+                </div>
                 <div class="blog-card fade-up">
                     <span class="blog-tag">Technical</span>
                     <h3>Making Neural Networks</h3>
@@ -324,14 +373,33 @@
           </div>
         </section>
     
-      <!-- Interests section for personal hobbies and interests -->
+      <!-- Interests section -->
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>I enjoy a variety of activities that keep me both mentally and <a href="https://www.instagram.com/stories/highlights/18454814917032207/" style="text-decoration: none; color: inherit;">physically engaged</a>. As an avid sports fan, I closely follow the San Francisco 49ers and Formula 1 racing. I also have a passion for video game design, 3D animation, and solving word puzzles, which challenge my creativity and problem-solving skills.</p>
-          <p class="mb-0">I love spending time in the kitchen. Cooking allows me to experiment with flavors and techniques, and I find joy in creating delicious meals for friends and family.</p>
+          <div class="interests-grid">
+            <div class="interest-card fade-up">
+              <i class="fa fa-flag-checkered"></i>
+              <h4>Sports</h4>
+              <p>Die-hard 49ers fan and Formula 1 strategy nerd. Always down to debate play-calling or pit stop timing.</p>
+            </div>
+            <div class="interest-card fade-up">
+              <i class="fa fa-cutlery"></i>
+              <h4>Cooking</h4>
+              <p>The kitchen is my lab. Love experimenting with flavors and feeding friends and family.</p>
+            </div>
+            <div class="interest-card fade-up">
+              <i class="fa fa-gamepad"></i>
+              <h4>Game Design</h4>
+              <p>Passionate about video game design and 3D animation — creativity meets code.</p>
+            </div>
+            <div class="interest-card fade-up">
+              <i class="fa fa-puzzle-piece"></i>
+              <h4>Puzzles</h4>
+              <p>Word puzzles and brain teasers keep me sharp and scratch the problem-solving itch.</p>
+            </div>
+          </div>
         </div>
-        
       </section>
 
       <!-- Dark Mode toggler-->

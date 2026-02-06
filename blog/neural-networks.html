@@ -5,46 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding Neural Network Layers</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:700|Open+Sans:400,400i,600,700" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../css/blog.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 </head>
 
 <body>
-    <header>
-        <h1>Understanding Neural Network Layers</h1>
-        <p class="subtitle">Simplified explanations and analogies</p>
-        <p class="subtitle">8/10/2024</p>
-        <section style="margin: 20px 0;">
-            <button onclick="goBack()" class="styled-back-button">← Back</button>
-        </section>
-  
-    </header>
+    <article class="blog-post">
+        <header class="blog-header">
+            <a href="../index.html#blog" class="back-link"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+            <div class="blog-meta">
+                <span class="tag">Technical</span>
+                <time datetime="2024-08-10">August 10, 2024</time>
+            </div>
+            <h1>Understanding Neural Network Layers</h1>
+            <p class="blog-subtitle">Simplified explanations and analogies</p>
+        </header>
 
-    <main>
-        
-        <br>
+        <div class="blog-content">
         <section>
             This summer, I took it upon myself to deepen my understanding of various Machine Learning concepts. As someone who is anticipating pursuing a master's or PhD in the future, I recognized that an in-depth, mathematical understanding of key areas in ML would be invaluable. Given the increasing prominence and applicability of neural networks in a wide range of fields—from computer vision to natural language processing—I decided to start my exploration here.
         </section>
-        <br>
 
         <section>
 
 Neural networks have revolutionized the way we approach problems that involve pattern recognition and decision-making. However, the power of these networks lies not just in their ability to perform well but in understanding the layers that constitute them. Each layer in a neural network has a specific role and understanding these roles, along with the mathematical principles behind them, is crucial for anyone looking to master this area.
         </section>
-        <br>
         <section>
             Quickly, before we get started, how does a neural network even work? At its core, a neural network is a computational model inspired by the way biological neurons in the human brain process information. It consists of layers of interconnected nodes, or "neurons," where each connection carries a weight. These neurons are organized into an input layer, hidden layers, and an output layer. Data is fed into the input layer, and as it passes through the network, each neuron processes the data by applying a mathematical function to the weighted sum of its inputs. The result is then passed to the next layer. Through a process called "training," the network adjusts these weights based on the error between the predicted output and the actual output, gradually learning to make accurate predictions or classifications. This learning process is typically achieved using an algorithm like backpropagation, which iteratively fine-tunes the network's weights to minimize errors. Ultimately, a well-trained neural network can recognize patterns and make decisions based on the data it has learned from, making it a powerful tool in fields such as image recognition, language processing, and more.
         </section>
-        <br>
         <section>
             <h2>1. Dense (Fully Connected) Layer</h2>
-        
+
             <h3>Analogy: The Decision-Making Committee</h3>
             <p>Imagine a committee where each member represents a neuron in a dense layer. Every committee member looks at all the information available (all the inputs) and makes a decision (output). The final decision (output of the dense layer) is a combination of all these individual decisions, weighted by the importance of each member's opinion.</p>
-        
+
             <h3>Math Behind It:</h3>
             <p><strong>Equation:</strong> \( z_j = \sum_{i=1}^{n} w_{ij}x_i + b_j \)</p>
             <p>Here:</p>
@@ -55,29 +51,29 @@ Neural networks have revolutionized the way we approach problems that involve pa
                 <li><strong>\( z_j \)</strong> is the output before activation.</li>
             </ul>
             <p><strong>Activation:</strong> Once \( z_j \) is calculated, an activation function (e.g., ReLU, Sigmoid) is applied: \( a_j = \sigma(z_j) \)</p>
-        
+
             <pre><code>
         <span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
         <span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> Dense
-        
+
         # Example of a <span class="function">Dense</span> layer in TensorFlow
         model = tf.keras.Sequential([
             Dense(128, <span class="function">activation</span>=<span class="string">'relu'</span>, input_shape=(784,)),  <span class="comment"># 128 neurons, ReLU activation</span>
             Dense(10, <span class="function">activation</span>=<span class="string">'softmax'</span>)  <span class="comment"># Output layer with 10 classes</span>
         ])
         </code></pre>
-        
+
             <h3>When to Use:</h3>
             <p>Dense layers are used when every input feature should be connected to every neuron in the next layer, making them crucial for tasks that require full integration of learned features.</p>
         </section>
-        
+
         <section>
             <h2>2. Convolutional Layer (Conv2D)</h2>
-        
+
             <h3>Math Behind It:</h3>
-        
+
             <p><strong>Equation:</strong> \( y_{i,j}^k = \sum_{m=0}^{M-1} \sum_{n=0}^{N-1} x_{i+m,j+n} \cdot w_{m,n}^k + b^k \)</p>
-            
+
             <p>Here:</p>
             <ul>
                 <li>\( x_{i+m,j+n} \) is the input pixel value at position \( (i+m, j+n) \).</li>
@@ -85,62 +81,62 @@ Neural networks have revolutionized the way we approach problems that involve pa
                 <li>\( b^k \) is the bias for the \( k \)-th filter.</li>
                 <li>\( y_{i,j}^k \) is the output value of the feature map at position \( (i, j) \).</li>
             </ul>
-        
+
             <p><strong>Operation:</strong> The filter (or kernel) slides over the input data, and at each position, the dot product between the filter weights and the input pixels is calculated, followed by adding a bias. This creates a feature map.</p>
-        
+
             <h3>Analogy: The Feature Detective</h3>
-        
+
             <p>A convolutional layer is like a detective looking for specific features in an image (or other input data). This detective uses a magnifying glass (a filter) to scan the image, looking for clues like edges, shapes, or textures. Each filter in a convolutional layer is trained to detect a specific type of feature. The result is a set of feature maps that highlight where these features are found in the image.</p>
-        
+
             <h3>When to Use:</h3>
-        
+
             <ul>
                 <li>Convolutional layers are essential for processing visual data (like images) because they excel at recognizing spatial hierarchies (patterns within patterns).</li>
                 <li>They are most commonly used in the early layers of a network where the goal is to extract basic features from the input data.</li>
             </ul>
-        
+
             <h3>Most Beneficial:</h3>
-        
+
             <p>In image recognition tasks, such as identifying objects in a photo, where understanding spatial relationships is crucial.</p>
         </section>
         <section>
             <h2>3. MaxPooling Layer</h2>
-        
+
             <h3>Math Behind It:</h3>
-        
+
             <p><strong>Equation:</strong> \( y_{i,j} = \max_{m,n \in \text{pool}}(x_{i+m,j+n}) \)</p>
-            
+
             <p>Here:</p>
             <ul>
                 <li>\( x_{i+m,j+n} \) are the input values within the pooling window (e.g., a 2x2 area).</li>
                 <li>\( y_{i,j} \) is the output after applying the max-pooling operation, which selects the maximum value within the window.</li>
             </ul>
-        
+
             <p><strong>Operation:</strong> The pooling operation reduces the size of the feature map by summarizing the most important features (i.e., taking the maximum value) in non-overlapping regions.</p>
-        
+
             <h3>Analogy: The Summary Reporter</h3>
-        
+
             <p>Think of a max-pooling layer as a reporter who summarizes the most important information. After the detective (convolutional layer) has identified various features, the reporter takes a summary by selecting the most prominent features within small regions of the feature maps. This reduces the amount of data while keeping the most important information.</p>
-        
+
             <h3>When to Use:</h3>
-        
+
             <ul>
                 <li>Pooling layers are typically used after convolutional layers to reduce the spatial size of the feature maps, making the network more efficient.</li>
                 <li>They help in down-sampling the data, which reduces computational load and helps in making the network more resistant to slight variations in the input.</li>
             </ul>
-        
+
             <h3>Most Beneficial:</h3>
-        
+
             <p>When you need to reduce the size of the data while retaining the most important features, often in the middle of a convolutional neural network.</p>
         </section>
-        
+
         <section>
             <h2>4. Dropout Layer</h2>
 
             <h3>Math Behind It:</h3>
 
             <p><strong>Equation:</strong> \( \tilde{a}^l_j = a^l_j \cdot m^l_j \)</p>
-            
+
             <p>Here:</p>
             <ul>
                 <li>\( a^l_j \) is the activation of neuron \( j \) in layer \( l \).</li>
@@ -168,90 +164,90 @@ Neural networks have revolutionized the way we approach problems that involve pa
 
         <section>
             <h2>5. Flatten Layer</h2>
-        
+
             <h3>Math Behind It:</h3>
-        
-            <p><strong>Operation:</strong> The flatten layer doesn’t involve complex math; it simply reshapes a multi-dimensional tensor (e.g., a 2D feature map) into a one-dimensional vector.</p>
-            
+
+            <p><strong>Operation:</strong> The flatten layer doesn't involve complex math; it simply reshapes a multi-dimensional tensor (e.g., a 2D feature map) into a one-dimensional vector.</p>
+
             <p><strong>Equation:</strong> If the input shape is \( (m, n, p) \), flattening will produce a vector of length \( m \times n \times p \).</p>
-        
+
             <h3>Analogy: The Organizer</h3>
-        
+
             <p>Imagine you're organizing a set of documents that were originally grouped into folders. The flatten layer is like taking all the documents out of the folders and laying them out in a single stack. This makes it easier to process them in the next step (like passing them to a dense layer). In neural networks, flattening takes the multi-dimensional output of convolutional layers and reshapes it into a one-dimensional array.</p>
-        
+
             <h3>When to Use:</h3>
-        
+
             <ul>
                 <li>Flatten layers are used when transitioning from convolutional layers (which output 2D feature maps) to dense layers (which expect 1D input).</li>
                 <li>It's a simple but crucial step in connecting the convolutional part of the network with the decision-making part.</li>
             </ul>
-        
+
             <h3>Most Beneficial:</h3>
-        
+
             <p>Before feeding data into dense layers, especially in networks that combine convolutional and fully connected layers.</p>
         </section>
 
         <section>
             <h2>6. Softmax Activation</h2>
-        
+
             <h3>Math Behind It:</h3>
-        
+
             <p><strong>Equation:</strong> \( \sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}} \)</p>
-            
+
             <p>Here:</p>
             <ul>
                 <li>\( z_i \) is the input to the \( i \)-th neuron (pre-softmax).</li>
                 <li>\( K \) is the total number of classes.</li>
                 <li>\( \sigma(z)_i \) is the output probability for the \( i \)-th class.</li>
             </ul>
-        
+
             <p><strong>Operation:</strong> The softmax function converts raw output scores (logits) into probabilities that sum to 1, making it suitable for multi-class classification.</p>
-        
+
             <h3>Analogy: The Election</h3>
-        
+
             <p>Imagine an election where each class (candidate) is running for office. The softmax activation is like counting the votes (predicted probabilities) for each candidate and normalizing them so that all votes add up to 100% (or 1.0). The candidate with the highest percentage is declared the winner (predicted class).</p>
-        
+
             <h3>When to Use:</h3>
-        
+
             <ul>
                 <li>Softmax is used in the output layer of a classification network when you need a probability distribution over multiple classes.</li>
             </ul>
-        
+
             <h3>Most Beneficial:</h3>
-        
+
             <p>In multi-class classification problems where you need the model to output a probability distribution over multiple classes.</p>
         </section>
 
         <section>
             <h2>7. ReLU Activation</h2>
-        
+
             <h3>Math Behind It:</h3>
-        
+
             <p><strong>Equation:</strong> \( \text{ReLU}(z) = \max(0, z) \)</p>
-            
+
             <p>Here:</p>
             <ul>
                 <li>\( z \) is the input to the activation function.</li>
                 <li>The ReLU function outputs \( z \) if \( z > 0 \), otherwise it outputs 0.</li>
             </ul>
-        
+
             <p><strong>Operation:</strong> ReLU introduces non-linearity into the model by allowing positive values to pass through unchanged and setting negative values to zero. This allows the network to learn more complex patterns.</p>
-        
+
             <h3>Analogy: The Gatekeeper</h3>
-        
+
             <p>Imagine a gatekeeper who only allows positive numbers to pass through while blocking any negative numbers. ReLU (Rectified Linear Unit) is an activation function that sets any negative input to zero and leaves positive inputs unchanged. This introduces non-linearity into the network, allowing it to learn more complex patterns.</p>
-        
+
             <h3>When to Use:</h3>
-        
+
             <ul>
                 <li>ReLU is used in hidden layers of neural networks to help model complex relationships by introducing non-linearity.</li>
             </ul>
-        
+
             <h3>Most Beneficial:</h3>
-        
+
             <p>In hidden layers, especially in deep networks where capturing complex patterns is necessary.</p>
         </section>
-<br>        
+
 <section>
     <h2>Real Life Application: Building a Number Recognition Model</h2>
 
@@ -310,15 +306,8 @@ model = models.Sequential([
             </ul>
             <p>Special thanks to the 3Blue1Brown series for its clear and engaging explanations of neural network concepts.</p>
         </section>
-        <br>
-
-
-        
-
-        
-
-
-    </main>
+        </div>
+    </article>
     <script src="../js/backbutton.js"></script>
 
 </body>
